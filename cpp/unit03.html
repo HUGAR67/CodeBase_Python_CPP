@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UNIT 03｜輸入與輸出｜CodeBase</title><link rel="stylesheet" href="../shared/style.css"><script src="../shared/app.js" defer></script></head>
+<body><header class="topbar">
+  <div class="brand-stack">
+    <a class="brand" href="../index.html"><span class="brand-mark">⌘</span><span>CodeBase<small>PROGRAMMING ACADEMY</small></span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">☰ 導覽</button>
+  </div>
+  <div class="topbar-spacer"></div>
+  <span class="topbar-caption">C++ 課程</span>
+  <button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
+</header>
+<aside class="sidebar" id="sidebar"><div class="side-label">學習空間</div><a class="side-link" href="../index.html">⌂ Lobby 總首頁</a><a class="side-link" href="../python/index.html">🐍 Python 課程</a><a class="side-link" href="../cpp/index.html">⚙ C++ 課程</a><div class="side-label">C++ 課程 · 27 單元</div><a class="side-link" href="index.html">📚 課程總覽</a><a class="side-link" href="unit01.html">UNIT 01 · 認識 C++ 與程式架構</a><a class="side-link" href="unit02.html">UNIT 02 · 變數與資料型態</a><a class="side-link" href="unit03.html">UNIT 03 · 輸入與輸出</a><a class="side-link" href="unit04.html">UNIT 04 · 運算子與數學運算</a><a class="side-link" href="unit05.html">UNIT 05 · 條件判斷 if</a><a class="side-link" href="unit06.html">UNIT 06 · for 迴圈</a><a class="side-link" href="unit07.html">UNIT 07 · while 迴圈</a><a class="side-link" href="unit08.html">UNIT 08 · 字元與字串</a><a class="side-link" href="unit09.html">UNIT 09 · 陣列與走訪</a><a class="side-link" href="unit10.html">UNIT 10 · 函式與基礎除錯</a><a class="side-link" href="unit11.html">UNIT 11 · 巢狀迴圈與圖形輸出</a><a class="side-link" href="unit12.html">UNIT 12 · 字串處理與常用函式</a><a class="side-link" href="unit13.html">UNIT 13 · 二維陣列與矩陣走訪</a><a class="side-link" href="unit14.html">UNIT 14 · 排序、搜尋與標準函式庫</a><a class="side-link" href="unit15.html">UNIT 15 · 參考、指標概念與小型專題</a><a class="side-link" href="unit16.html">UNIT 16 · STL vector：可變長度陣列</a><a class="side-link" href="unit17.html">UNIT 17 · pair、tuple 與自訂排序</a><a class="side-link" href="unit18.html">UNIT 18 · stack、queue 與 deque</a><a class="side-link" href="unit19.html">UNIT 19 · map、set 與雜湊容器</a><a class="side-link" href="unit20.html">UNIT 20 · 遞迴與回溯</a><a class="side-link" href="unit21.html">UNIT 21 · 前綴和、差分與區間查詢</a><a class="side-link" href="unit22.html">UNIT 22 · 雙指標與滑動視窗</a><a class="side-link" href="unit23.html">UNIT 23 · 二分搜尋與答案搜尋</a><a class="side-link" href="unit24.html">UNIT 24 · 貪心演算法與正確性</a><a class="side-link" href="unit25.html">UNIT 25 · 動態規劃：從狀態到轉移</a><a class="side-link" href="unit26.html">UNIT 26 · 圖論：圖的表示與 BFS/DFS</a><a class="side-link" href="unit27.html">UNIT 27 · 時間複雜度與 APCS 整合實戰</a><a class="side-link" href="practice.html">✦ 練習中心</a><a class="side-link" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">⌘ Online C++ ↗</a><div class="side-label">實作與進階</div><a class="side-link" href="../python/practice.html#coding-challenges">🧩 Python 實作題</a><a class="side-link" href="../cpp/practice.html#coding-challenges">🧩 C++ 實作題</a><a class="side-link" href="../index.html#apcs-roadmap">🎯 APCS 學習路線</a></aside>
+<main class="main-content"><div class="eyebrow">⚙ · UNIT 03 / 27 · 基礎篇</div><div class="lesson-layout"><article class="lesson-main">
+<span class="tag blue-tag">C++ 基礎 · UNIT 03</span>
+<h1>輸入與輸出</h1><p class="lesson-lead">用 cin 讀取資料、cout 輸出結果；&gt;&gt; 與 &lt;&lt; 的方向不要弄反。</p>
+<div class="lesson-objectives"><h2>🎯 本單元學習目標</h2><ul><li>說明「輸入與輸出」在解題時能處理哪一類問題。</li><li>讀懂範例中的輸入、處理流程與輸出結果。</li><li>能修改範例，並用至少兩組測資驗證自己的理解。</li></ul></div>
+<h2>一、先建立觀念</h2><p>cin &gt;&gt; a &gt;&gt; b 可以讀取同一行或不同空白分隔的兩個整數。OJ 題目通常要求只輸出答案，不要加提示文字。</p>
+<div class="callout"><strong>解題習慣：</strong>先確認輸入有哪些、輸出需要什麼，再決定資料要如何保存，以及每一步要做什麼。不要一看到題目就急著打程式。</div>
+<h2>二、範例程式</h2><p>先試著自己預測輸出，再複製到線上編輯器執行。觀察每個變數在程式執行前後的變化。</p>
+<pre class="code-block"><code>#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; a + b &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+<div class="lesson-actions"><button class="button secondary copy-code-btn" type="button">複製範例程式</button><a class="button primary" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">在 Online C++ 執行 ↗</a></div>
+<h2>三、執行結果與逐步理解</h2><pre class="code-block output-block"><code>輸入：
+12 30
+輸出：42</code></pre>
+<ol><li><strong>讀取／準備資料：</strong>確認程式中哪些值是固定的，哪些值可能來自輸入。</li><li><strong>執行主要步驟：</strong>追蹤迴圈、條件或函式的執行順序，不要只看最後一行。</li><li><strong>輸出答案：</strong>確認空格、換行、資料型態與題目要求一致。</li></ol>
+<h2>四、常見錯誤與除錯</h2><div class="callout warning-callout"><strong>容易踩到的坑：</strong>不要輸出「請輸入數字」等額外文字，否則可能不符合評測格式。</div><p>如果結果不對，可以依序檢查：① 讀到的資料是否正確；② 邊界條件是否漏掉；③ 迴圈是否多跑／少跑一次；④ 輸出格式是否完全符合題目。</p>
+<h2>五、動手練習</h2><div class="challenge-card"><span class="tag orange-tag">TRY IT</span><h3>挑戰任務</h3><p>讀入長與寬，輸出面積與周長。</p><p><strong>建議測資：</strong>至少測試一般情況、最小輸入，以及容易出錯的邊界情況。</p><details><summary>看提示（先自己想想再打開）</summary><p>先用紙筆手算一組小測資。寫出每一步的重要變數，再把流程翻譯成程式；若有重複步驟，考慮使用迴圈或函式。</p></details></div>
+<h2>六、本單元小結</h2><ul><li>能用自己的話說明本單元的核心概念。</li><li>能不看範例，自己寫出基本版本。</li><li>能設計測資檢查邊界情況，並解釋為什麼答案正確。</li></ul>
+<div class="lesson-actions lesson-actions-unified"><a class="button secondary" href="unit02.html">← 往回上一個單元</a><button class="button primary lesson-next-complete" data-lang="cpp" data-unit="03" data-next="unit04.html" type="button">✓ 完成並前往下一個單元 →</button></div>
+</article><aside class="lesson-aside"><h3>本課程單元</h3><a href="unit01.html">UNIT 01 · 認識 C++ 與程式架構</a><a href="unit02.html">UNIT 02 · 變數與資料型態</a><a href="unit03.html">UNIT 03 · 輸入與輸出</a><a href="unit04.html">UNIT 04 · 運算子與數學運算</a><a href="unit05.html">UNIT 05 · 條件判斷 if</a><a href="unit06.html">UNIT 06 · for 迴圈</a><a href="unit07.html">UNIT 07 · while 迴圈</a><a href="unit08.html">UNIT 08 · 字元與字串</a><a href="unit09.html">UNIT 09 · 陣列與走訪</a><a href="unit10.html">UNIT 10 · 函式與基礎除錯</a><a href="practice.html">✦ 練習題</a></aside></div><footer class="footer"><a class="brand small-brand" href="../index.html"><span class="brand-mark">⌘</span><span>CodeBase</span></a><span>完成後標記單元，保存學習紀錄。</span><span>UNIT 03</span></footer></main></body></html>
