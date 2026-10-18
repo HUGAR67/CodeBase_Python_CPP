@@ -22,6 +22,33 @@
     });
   };
   const markComplete = (lang, unit) => { const data = readProgress(); if (!data[lang]) data[lang] = []; if (!data[lang].includes(unit)) data[lang].push(unit); saveProgress(data); refreshProgress(); };
+  // Standardize the primary navigation across every page (root and one-level subfolders).
+  const navSidebar = $("#sidebar");
+  if (navSidebar && navSidebar.querySelector("[data-dest]")) {
+    const inSectionFolder = /\/(python|cpp|topics|security)\//i.test(location.pathname);
+    const rootPrefix = inSectionFolder ? "../" : "./";
+    $$("[data-dest]", navSidebar).forEach(link => {
+      const dest = link.dataset.dest || "index.html";
+      if (/^https?:\/\//i.test(dest)) { link.href = dest; return; }
+      link.href = rootPrefix + dest;
+      const cleanDest = dest.split("#")[0];
+      const currentPath = location.pathname;
+      // Only mark the exact destination as active. Do not also highlight the
+      // language landing page while the learner is inside an individual unit.
+      const normalizedCurrent = location.pathname.replace(/\/+$/, "");
+      const normalizedTarget = new URL(link.href, location.href).pathname.replace(/\/+$/, "");
+      const active = normalizedCurrent === normalizedTarget ||
+        (normalizedTarget.endsWith("/index.html") && /\/$/.test(location.pathname) &&
+         normalizedCurrent === normalizedTarget.slice(0, -"/index.html".length));
+      if (active) {
+        link.classList.add("selected");
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove("selected");
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
   const themeButton = $("#themeToggle");
   const applyTheme = theme => { document.body.classList.toggle("light-mode", theme === "light"); if (themeButton) themeButton.textContent = theme === "light" ? "☀ 淺色" : "☾ 深色"; localStorage.setItem("codebase-theme", theme); };
   applyTheme(localStorage.getItem("codebase-theme") || "dark");

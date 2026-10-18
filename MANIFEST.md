@@ -1,4 +1,4 @@
-# CodeBase｜Python × C++ 學習站 v3.12
+# CodeBase｜Python × C++ 學習站 v3.16
 
 ## 目錄架構
 ```text
@@ -65,8 +65,23 @@ GitHub Pages 設為 `main` 分支的 `/(root)`。靜態網站的程式執行由�
 - `security/crack-tutorial.html`：一步一步拆解密碼鎖，包含瀏覽器原始碼檢視、SHA-256 說明與純瀏覽器互動式候選清單比對教學。
 
 
-## v3.12 更新
+## v3.13 更新
 - 密碼拆解教學完全改用 HTML、CSS、JavaScript 與瀏覽器 Web Crypto API，不需要 Python。
 - 互動功能包括 SHA-256 計算、固定虛構候選清單比對、程式碼逐行解說。
 - GitHub Pages HTTPS 部署後可直接操作。
 - 移除 ZIP 中重複的舊版巢狀專案資料夾。
+
+- `topics/web-languages.html`：HTML、CSS、JavaScript、JSON 零基礎互動教學。
+- v3.13：全站統一側邊導覽，新增 HTML／CSS／JavaScript／JSON 教學，移除 `shared/README.md`。
+
+
+## v3.14
+- `shared/app.js`：修正導覽目前頁面狀態，避免課程首頁與單元導覽同時高亮。
+
+
+## v3.15
+- 統一 HTML 頁尾的 GitHub Pages 版本標籤，修正首頁殘留的 v2.1。
+
+
+## v3.16
+- 將 HTML 頁面與共用 CSS 整理為較易閱讀的多行格式；未重寫頁面功能邏輯。

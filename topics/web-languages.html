@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="從零開始學 HTML、CSS、JavaScript 和 JSON，附瀏覽器互動範例。">
+<title>HTML、CSS、JavaScript 與 JSON 入門｜CodeBase</title>
+<link rel="stylesheet" href="../shared/style.css"><script src="../shared/app.js" defer></script>
+
+<style>
+.webdev-wrap {
+  max-width:1000px;
+  margin:28px auto;
+  padding:clamp(18px,4vw,34px)
+}
+.webdev-wrap p,.webdev-wrap li {
+  line-height:1.85
+}
+.webdev-card {
+  margin:18px 0;
+  padding:20px;
+  border:1px solid var(--border-color,#475569);
+  border-radius:18px;
+  background:var(--card-bg,rgba(15,23,42,.42))
+}
+.webdev-card h2 {
+  margin-top:0
+}
+.webdev-code {
+  display:block;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  overflow:auto;
+  padding:15px;
+  border-radius:12px;
+  background:#0b1220;
+  color:#e2e8f0;
+  line-height:1.65
+}
+.webdev-demo {
+  padding:16px;
+  border:1px dashed var(--border-color,#64748b);
+  border-radius:14px;
+  margin-top:12px
+}
+.webdev-demo button {
+  padding:10px 14px;
+  border:0;
+  border-radius:10px;
+  background:#7c3aed;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer
+}
+.webdev-demo input {
+  padding:10px;
+  border-radius:8px;
+  border:1px solid var(--border-color,#64748b);
+  background:var(--input-bg,transparent);
+  color:inherit;
+  max-width:100%
+}
+.webdev-result {
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(100,116,139,.13);
+  overflow-wrap:anywhere
+}
+.webdev-tabs {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:18px 0
+}
+.webdev-tabs a {
+  padding:8px 12px;
+  border:1px solid var(--border-color,#64748b);
+  border-radius:999px;
+  text-decoration:none
+}
+.mini-preview {
+  padding:18px;
+  border-radius:12px;
+  background:#f8fafc;
+  color:#172033
+}
+.mini-preview h3 {
+  color:#6d28d9
+}
+.mini-preview .sample-button {
+  background:#6d28d9;
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:8px
+}
+</style></head>
+
+<body>
+<header class="topbar">
+<div class="brand-stack">
+<a class="brand" href="../index.html">
+<span class="brand-mark">⌘</span>
+<span>CodeBase<small>WEB DEVELOPMENT</small>
+</span>
+</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">導覽</button>
+</div>
+
+<div class="topbar-spacer">
+</div>
+
+<span class="topbar-caption">網頁開發入門</span>
+<button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
+</header>
+
+<!-- Shared navigation is standardized by shared/app.js on every page. -->
+<aside class="sidebar" id="sidebar" aria-label="網站主要導覽">
+<div class="side-label">學習首頁</div>
+
+<a class="side-link" data-dest="index.html" href="index.html">⌂ CodeBase 首頁</a>
+<div class="side-label">程式設計課程</div>
+
+<a class="side-link" data-dest="python/index.html" href="python/index.html">🐍 Python 基礎課程</a>
+<a class="side-link" data-dest="cpp/index.html" href="cpp/index.html">⚙ C++ 基礎課程</a>
+<a class="side-link" data-dest="python/practice.html" href="python/practice.html">🧩 Python 練習題</a>
+<a class="side-link" data-dest="cpp/practice.html" href="cpp/practice.html">🧩 C++ 練習題</a>
+<div class="side-label">網頁開發教學</div>
+
+<a class="side-link" data-dest="topics/web-languages.html" href="topics/web-languages.html">🧱 HTML／CSS／JavaScript／JSON</a>
+<a class="side-link" data-dest="topics/website-guide.html" href="topics/website-guide.html">🌐 網站如何運作</a>
+<div class="side-label">資訊安全與解謎</div>
+
+<a class="side-link" data-dest="topics/cybersecurity.html" href="topics/cybersecurity.html">🛡️ 資訊安全入門</a>
+<a class="side-link" data-dest="security/password-lab.html" href="security/password-lab.html">🔐 密碼設計與安全測試</a>
+<a class="side-link" data-dest="security/password-gate.html" href="security/password-gate.html">🗝️ 封存終端機挑戰</a>
+<a class="side-link" data-dest="security/crack-tutorial.html" href="security/crack-tutorial.html">🧭 一步一步拆解密碼鎖</a>
+<a class="side-link" data-dest="security/field-notes.html" href="security/field-notes.html">📁 封存研究筆記</a>
+<div class="side-label">APCS 與其他資源</div>
+
+<a class="side-link" data-dest="topics/linux-apcs.html" href="topics/linux-apcs.html">🐧 APCS Linux 操作</a>
+<a class="side-link" data-dest="index.html#apcs-roadmap" href="index.html#apcs-roadmap">🎯 APCS 學習路線</a>
+<a class="side-link" data-dest="https://www.programiz.com/python-programming/online-compiler" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">⌘ Online Python ↗</a>
+<a class="side-link" data-dest="https://www.onlinegdb.com/online_c++_compiler" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">⌘ Online C++ ↗</a>
+<div class="sidebar-note">
+<span class="status-dot">
+</span> 學習紀錄儲存在這台裝置</div>
+
+</aside>
+
+<main class="main-content">
+<article class="webdev-wrap">
+<span class="tag purple-tag">WEB DEVELOPMENT · BEGINNER</span>
+<h1>從零開始學網頁：HTML、CSS、JavaScript、JSON</h1>
+
+<p class="lesson-lead">把網頁想成一間店：HTML 決定店裡有什麼，CSS 決定它長什麼樣，JavaScript 負責互動，JSON 則是常用來整理與交換資料的格式。這些例子可以直接在瀏覽器閱讀與操作，不用安裝軟體。</p>
+
+<div class="webdev-tabs">
+<a href="#html">HTML</a>
+<a href="#css">CSS</a>
+<a href="#javascript">JavaScript</a>
+<a href="#json">JSON</a>
+<a href="#practice">綜合練習</a>
+</div>
+
+<section class="webdev-card" id="html">
+<h2>1. HTML：網頁的骨架</h2>
+
+<p>HTML 使用標籤描述內容，例如標題、段落、圖片和按鈕。大部分標籤由開始標籤與結束標籤組成。</p>
+
+<pre class="webdev-code">
+<code>&lt;h1&gt;我的第一個網頁&lt;/h1&gt;
+&lt;p&gt;這是一段介紹文字。&lt;/p&gt;
+&lt;button&gt;按我&lt;/button&gt;</code>
+</pre>
+
+<p>
+<strong>逐行看：</strong>
+<code>&lt;h1&gt;</code> 是主要標題；<code>&lt;p&gt;</code> 是段落；<code>&lt;button&gt;</code> 是按鈕。HTML 負責結構，不是主要用來控制顏色。</p>
+
+<div class="webdev-demo">
+<strong>即時預覽</strong>
+<div class="mini-preview">
+<h3>我的第一個網頁</h3>
+
+<p>這是一段介紹文字。</p>
+
+<button class="sample-button" type="button" id="htmlPreviewButton">按我</button>
+<p id="htmlPreviewResult">按鈕尚未被點擊。</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="webdev-card" id="css">
+<h2>2. CSS：網頁的外觀</h2>
+
+<p>CSS 控制顏色、字型、間距、邊框與排版。選擇器決定要修改哪個 HTML 元素。</p>
+
+<pre class="webdev-code">
+<code>h1 {
+  color: rebeccapurple;
+  font-size: 32px;
+}
+.card {
+  padding: 16px;
+  border-radius: 12px;
+}</code>
+</pre>
+
+<p>
+<strong>逐行看：</strong>
+<code>h1</code> 選取標題；大括號內是設定；<code>color</code> 是文字顏色；<code>padding</code> 是內容與邊界之間的留白；<code>border-radius</code> 讓角落變圓。</p>
+
+<div class="webdev-demo">
+<label for="cssColor">試著選一種標題顏色：</label>
+<select id="cssColor">
+<option value="#6d28d9">紫色</option>
+<option value="#0284c7">藍色</option>
+<option value="#15803d">綠色</option>
+<option value="#be123c">紅色</option>
+</select>
+<div class="mini-preview" style="margin-top:12px">
+<h3 id="cssPreviewTitle">CSS 可以改變我的顏色</h3>
+
+<p>你選擇顏色後，標題會立即更新。</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="webdev-card" id="javascript">
+<h2>3. JavaScript：讓網頁動起來</h2>
+
+<p>JavaScript 可以回應點擊、讀取輸入、計算資料並更新畫面。這是瀏覽器能直接執行的程式語言。</p>
+
+<pre class="webdev-code">
+<code>const button = document.querySelector("#helloButton");
+button.addEventListener("click", () => {
+  document.querySelector("#helloResult").textContent = "你好！按鈕成功執行了。";
+});</code>
+</pre>
+
+<p>
+<strong>逐行看：</strong>
+<code>querySelector</code> 找到 HTML 元素；<code>addEventListener("click", ...)</code> 設定點擊時要做的事；<code>textContent</code> 修改畫面上的文字。</p>
+
+<div class="webdev-demo">
+<button id="helloButton" type="button">執行 JavaScript</button>
+<div id="helloResult" class="webdev-result" aria-live="polite">按下按鈕，這段文字就會改變。</div>
+
+</div>
+
+</section>
+
+<section class="webdev-card" id="json">
+<h2>4. JSON：整理資料的格式</h2>
+
+<p>JSON 常用來保存或傳送資料。它看起來像 JavaScript 物件，但 JSON 格式的鍵和值字串都必須使用雙引號；不能直接放函式或註解。</p>
+
+<pre class="webdev-code">
+<code>{
+  "name": "Mina",
+  "language": "JavaScript",
+  "completedLessons": 3,
+  "likesCoding": true
+}</code>
+</pre>
+
+<p>
+<strong>逐行看：</strong>
+<code>name</code>、<code>language</code> 是欄位名稱；文字要用雙引號；<code>3</code> 是數字；<code>true</code> 是布林值。實際資料檔常見副檔名是 <code>.json</code>。</p>
+
+<div class="webdev-demo">
+<button id="jsonButton" type="button">讀取這份 JSON 範例</button>
+<pre class="webdev-code" id="jsonResult">按下按鈕後，會顯示整理好的資料。</pre>
+
+</div>
+
+</section>
+
+<section class="webdev-card" id="practice">
+<h2>5. 綜合練習：四者如何合作？</h2>
+
+<ol>
+<li>HTML 建立標題、輸入框和按鈕。</li>
+
+<li>CSS 把內容排整齊、調整顏色與間距。</li>
+
+<li>JavaScript 在使用者點擊時讀取輸入並更新結果。</li>
+
+<li>JSON 可以用來整理一組課程、題目或設定資料。</li>
+
+</ol>
+
+<div class="webdev-demo">
+<label for="nameInput">輸入一個暱稱（請勿輸入個人敏感資料）：</label>
+<br>
+<input id="nameInput" value="新手工程師" maxlength="30">
+<button id="greetButton" type="button">組合示範</button>
+<div id="greetResult" class="webdev-result" aria-live="polite">結果會在這裡出現。</div>
+
+</div>
+
+<details>
+<summary>這四個東西是不是都要學？</summary>
+
+<p>如果想做網站，HTML 和 CSS 是基礎，JavaScript 負責互動，JSON 常用於資料交換。它們用途不同，但通常會一起出現在同一個專案中。CodeBase 本身就使用 HTML、CSS 和 JavaScript，GitHub Pages 負責把靜態檔案發布到網路上。</p>
+
+</details>
+
+</section>
+
+<div class="lesson-actions lesson-actions-unified">
+<a class="button secondary" href="website-guide.html">← 網站如何運作</a>
+<a class="button primary" href="../index.html">回到 CodeBase 首頁 →</a>
+</div>
+
+</article>
+
+<footer class="footer">
+<a class="brand small-brand" href="../index.html">⌘ CodeBase</a>
+<span>一步一步學會網頁開發。</span>
+<span>GitHub Pages Ready · v3.15</span>
+</footer>
+
+</main>
+
+<script>
+(() => {
+ const htmlButton=document.getElementById('htmlPreviewButton');
+ if(htmlButton) htmlButton.addEventListener('click',()=>{document.getElementById('htmlPreviewResult').textContent='你成功觸發了按鈕事件！';});
+ const cssColor=document.getElementById('cssColor'), cssTitle=document.getElementById('cssPreviewTitle');
+ if(cssColor&&cssTitle) cssColor.addEventListener('change',()=>{cssTitle.style.color=cssColor.value;});
+ const helloButton=document.getElementById('helloButton');
+ if(helloButton) helloButton.addEventListener('click',()=>{document.getElementById('helloResult').textContent='你好！按鈕成功執行了。';});
+ const jsonButton=document.getElementById('jsonButton');
+ if(jsonButton) jsonButton.addEventListener('click',()=>{const data={name:'Mina',language:'JavaScript',completedLessons:3,likesCoding:true};document.getElementById('jsonResult').textContent=JSON.stringify(data,null,2);});
+ const greetButton=document.getElementById('greetButton');
+ if(greetButton) greetButton.addEventListener('click',()=>{const name=document.getElementById('nameInput').value.trim()||'學習者';const data={nickname:name,topic:'HTML + CSS + JavaScript + JSON',message:`你好，${name}！四種技術可以一起合作。`};document.getElementById('greetResult').textContent=JSON.stringify(data,null,2);});
+})();
+</script></body>
+
+</html>

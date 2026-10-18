@@ -1,105 +1,563 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
-  <title>CodeBase｜Python × C++ 基礎學院</title>
-  <link rel="stylesheet" href="shared/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>CodeBase｜Python × C++ 基礎學院</title>
+<link rel="stylesheet" href="shared/style.css">
   <script src="shared/app.js" defer></script>
+
 </head>
+
 <body>
-  <header class="topbar">
-  <div class="brand-stack">
-    <a class="brand" href="index.html"><span class="brand-mark">⌘</span><span>CodeBase<small>PROGRAMMING ACADEMY</small></span></a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">導覽</button>
-  </div>
-  <div class="topbar-spacer"></div>
-  <span class="topbar-caption">Lobby</span>
-  <button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
+<header class="topbar">
+<div class="brand-stack">
+<a class="brand" href="index.html">
+<span class="brand-mark">⌘</span>
+<span>CodeBase<small>PROGRAMMING ACADEMY</small>
+</span>
+</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">導覽</button>
+</div>
+
+<div class="topbar-spacer">
+</div>
+
+<span class="topbar-caption">Lobby</span>
+<button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
 </header>
-  <aside class="sidebar" id="sidebar">
-    <div class="side-label">學習空間</div>
-    <a class="side-link selected" href="index.html"><span>⌂</span> Lobby 總首頁</a>
-    <a class="side-link" href="python/index.html"><span>🐍</span> Python 基礎</a>
-    <a class="side-link" href="cpp/index.html"><span>⚙</span> C++ 基礎</a>
-    <div class="side-label">網站與資訊安全</div><a class="side-link" href="topics/website-guide.html"><span>🌐</span> 網站如何運作</a><a class="side-link" href="topics/cybersecurity.html"><span>🛡️</span> 資訊安全入門</a><a class="side-link" href="security/password-lab.html"><span>🔐</span> 密碼設計與安全測試</a><a class="side-link" href="security/crack-tutorial.html"><span>🧭</span> 一步一步拆解密碼鎖</a><div class="side-label">線上編輯器</div><a class="side-link" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">⌘ Online Python ↗</a><a class="side-link" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">⌘ Online C++ ↗</a><div class="side-label">快速入口</div>
-    <a class="side-link" href="python/unit01.html">Python · 第一堂</a>
-    <a class="side-link" href="cpp/unit01.html">C++ · 第一堂</a>
-    <a class="side-link" href="#practice">✦ 練習中心</a>
-    <div class="sidebar-note"><span class="status-dot"></span> 學習紀錄儲存在這台裝置</div>
-  <div class="side-label">實作與進階</div><a class="side-link" href="python/practice.html#coding-challenges">🧩 Python 實作題</a><a class="side-link" href="cpp/practice.html#coding-challenges">🧩 C++ 實作題</a><a class="side-link" href="index.html#apcs-roadmap">🎯 APCS 學習路線</a><a class="side-link" href="topics/linux-apcs.html">🐧 APCS Linux 操作入門</a></aside>
-  <main class="main-content">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR FIRST STEP INTO CODE</div>
-        <h1>從零開始，<br><span class="gradient-text">寫出你的第一支程式。</span></h1>
-        <p>用清楚的觀念、簡短的範例與循序漸進的練習，打好 Python 和 C++ 的程式設計基礎。</p>
-        <div class="hero-actions"><a class="button primary" href="#courses">開始學習 <span>↗</span></a><a class="button secondary" href="#practice">前往練習</a></div>
-        <div class="hero-meta"><span>● 完全初學者適用</span><span>⌁ 不需登入</span><span>▣ 自動保存進度</span></div>
-      </div>
-      <div class="hero-visual" aria-label="程式碼示意">
-        <div class="code-window">
-          <div class="window-bar"><i></i><i></i><i></i><span>hello_world.py</span></div>
-          <div class="code-body"><div><b>1</b> <span class="code-purple">message</span> <span class="code-muted">=</span> <span class="code-green">"Hello, world!"</span></div><div><b>2</b> <span class="code-blue">print</span><span class="code-muted">(</span><span class="code-purple">message</span><span class="code-muted">)</span></div><div class="code-empty"></div><div><b>3</b> <span class="code-muted"># Your journey starts here.</span></div></div>
-          <div class="code-output"><span class="output-label">OUTPUT</span><div><span class="output-arrow">›</span> Hello, world!</div><div class="output-cursor"></div></div>
-        </div>
-        <div class="floating-chip chip-python"><span>🐍</span> Python</div><div class="floating-chip chip-cpp"><span>⚙</span> C++</div>
-      </div>
-    </section>
-    <section class="what-can-code" id="code-world" aria-label="程式可以做什麼">
-      <div class="what-code-copy"><div class="eyebrow">CODE IS EVERYWHERE</div><h2>程式不只是打字。<br><span class="gradient-text">它能把想法變成作品。</span></h2><p>從遊戲、網站到資料分析和自動化，選一個你感興趣的方向，開始探索。</p><div class="showcase-controls"><button class="showcase-dot active" type="button" data-showcase="0" aria-label="顯示遊戲開發"></button><button class="showcase-dot" type="button" data-showcase="1" aria-label="顯示網站開發"></button><button class="showcase-dot" type="button" data-showcase="2" aria-label="顯示資料分析"></button><button class="showcase-dot" type="button" data-showcase="3" aria-label="顯示自動化"></button></div></div>
-      <div class="showcase-stage" id="showcaseStage">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core"><span id="showcaseEmoji">🎮</span></div>
-        <div class="showcase-float float-a"><span id="showcaseTagA">🕹️</span><b id="showcaseLabelA">遊戲角色</b></div><div class="showcase-float float-b"><span id="showcaseTagB">⚡</span><b id="showcaseLabelB">互動邏輯</b></div><div class="showcase-float float-c"><span id="showcaseTagC">🏆</span><b id="showcaseLabelC">玩家成就</b></div>
-        <div class="showcase-caption"><span class="showcase-live"></span><span id="showcaseTitle">遊戲開發</span><span id="showcaseDescription">讓規則變成可以玩的世界</span></div>
-        <div class="showcase-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-    </section>
-    <section class="stats-grid">
-      <div class="stat-card"><span class="stat-icon purple">▤</span><div><strong>30</strong><span>教學單元（含進階）</span></div></div>
-      <div class="stat-card"><span class="stat-icon blue">⌘</span><div><strong>2</strong><span>程式語言</span></div></div>
-      <div class="stat-card"><span class="stat-icon green">✓</span><div><strong id="completedCount">0</strong><span>已完成單元</span></div></div>
-      <div class="stat-card"><span class="stat-icon orange">✦</span><div><strong>16</strong><span>實作挑戰題</span></div></div>
-    </section>
-    <section class="section-block" id="courses">
-      <div class="section-heading"><div><div class="eyebrow">CHOOSE YOUR PATH</div><h2>選擇你的學習路線</h2></div><div class="section-heading-actions"><p>兩種語言，從基礎觀念開始。</p><button class="button secondary reset-progress" id="resetLearningProgress" type="button">↺ 重設學習紀錄</button></div></div>
-      <div class="course-grid">
-        <article class="course-card python-card">
-          <div class="course-top"><span class="language-icon">🐍</span><span class="tag purple-tag">BEGINNER FRIENDLY</span></div>
-          <h3>Python 學習路線</h3><p>從基礎語法進階到字典、檔案、排序搜尋與小型專題。</p>
-          <div class="course-details"><span>27 個單元</span><span>入門・循序漸進</span></div>
-          <div class="progress-track"><span id="pythonProgress" style="width:0%"></span></div><div class="progress-caption"><span>學習進度</span><span id="pythonProgressText">0 / 10</span></div>
-          <a class="button primary full" href="python/index.html">進入 Python 課程 <span>→</span></a>
-        </article>
-        <article class="course-card cpp-card">
-          <div class="course-top"><span class="language-icon">⚙️</span><span class="tag blue-tag">FOUNDATION</span></div>
-          <h3>C++ 學習路線</h3><p>從基礎語法進階到二維陣列、標準函式庫與小型專題。</p>
-          <div class="course-details"><span>27 個單元</span><span>入門・循序漸進</span></div>
-          <div class="progress-track"><span id="cppProgress" style="width:0%"></span></div><div class="progress-caption"><span>學習進度</span><span id="cppProgressText">0 / 10</span></div>
-          <a class="button blue-button full" href="cpp/index.html">進入 C++ 課程 <span>→</span></a>
-        </article>
-      </div>
-    </section>
-    <section class="section-block practice-section" id="practice">
-      <div class="section-heading"><div><div class="eyebrow">PRACTICE MAKES PROGRESS</div><h2>練習中心</h2></div><p>先試著回答，再查看解析。</p></div>
-      <div class="practice-panel">
-        <div class="practice-intro"><span class="practice-star">✦</span><div><h3>每日一題 <span class="daily-date" id="dailyDate"></span></h3><p>每天一題；作答紀錄會保存在這台裝置，當天完成後會顯示「已作答」。</p></div></div>
-        <div class="quiz-card" id="lobbyQuiz">
-          <div class="quiz-meta"><span class="tag purple-tag">PYTHON · 入門</span><span>單選題</span></div>
-          <h4 id="dailyQuestion">執行 `print(2 + 3)` 時，畫面會顯示什麼？</h4>
-          <div class="quiz-options">
-            <button class="quiz-option" data-answer="a">A. `2 + 3`</button><button class="quiz-option" data-answer="b">B. `5`</button><button class="quiz-option" data-answer="c">C. `23`</button><button class="quiz-option" data-answer="d">D. 發生錯誤</button>
-          </div>
-          <div class="quiz-feedback" id="lobbyFeedback" aria-live="polite"></div><div id="dailyStatus" aria-live="polite"></div>
-        </div>
-        <div class="daily-links"><a class="text-link" href="python/practice.html">Python 題庫 20 題 ↗</a><a class="text-link" href="cpp/practice.html">C++ 題庫 20 題 ↗</a></div>
-      </div>
-    </section>
-<section class="section-block" id="web-safety-learning"><div class="section-heading"><div><div class="eyebrow">WEB LITERACY & DIGITAL SAFETY</div><h2>網站與資訊安全學院</h2></div><p>不只學寫程式，也理解網站背後的運作與數位安全。</p></div><div class="learning-hub-grid"><article class="learning-hub-card"><span class="learning-hub-icon">🌐</span><h3>網站如何運作</h3><p>認識 HTML、CSS、JavaScript、瀏覽器、GitHub Pages 和 localStorage，了解這個網站本身如何運作。</p><a class="text-link" href="topics/website-guide.html">進入完整教學 ↗</a></article><article class="learning-hub-card"><span class="learning-hub-icon">🛡️</span><h3>資訊安全入門</h3><p>學習釣魚防範、帳號保護、MFA、軟體更新、備份與負責任的資安習慣。</p><a class="text-link" href="topics/cybersecurity.html">進入完整教學 ↗</a></article><article class="learning-hub-card"><span class="learning-hub-icon">🔐</span><h3>密碼設計與安全測試</h3><p>了解密碼強度、常見猜測風險、雜湊與 salt，並用虛構範例做簡單檢查。</p><a class="text-link" href="security/password-lab.html">進入安全實驗室 ↗</a></article><article class="learning-hub-card"><span class="learning-hub-icon">🗝️</span><h3>封存終端機解謎</h3><p>挑戰一個虛構的前端密碼鎖，再透過分段線索理解為何前端驗證不能保護真正的秘密。</p><a class="text-link" href="security/password-gate.html">進入挑戰 ↗</a></article><article class="learning-hub-card"><span class="learning-hub-icon">🧭</span><h3>一步一步拆解密碼鎖</h3><p>從檢視原始碼開始，逐步學會 SHA-256、Python 候選清單比對，以及前端密碼鎖的安全限制。</p><a class="text-link" href="security/crack-tutorial.html">閱讀完整教學 ↗</a></article></div></section>
-<section class="section-block"><div class="section-heading"><div><div class="eyebrow">EXAM ENVIRONMENT</div><h2>熟悉 APCS 考場操作</h2></div><p>練習 Linux 終端機、執行 Python、編譯 C++，以及常見錯誤排查。</p></div><div class="roadmap-actions"><a class="button primary" href="topics/linux-apcs.html">🐧 開始 Linux 操作教學 ↗</a></div></section>
-<section class="section-block apcs-roadmap" id="apcs-roadmap"><div class="section-heading"><div><div class="eyebrow">YOUR NEXT LEVEL</div><h2>從基礎走向 APCS：27 單元路線</h2></div><p>從語法、中階資料處理，逐步進入演算法與 APCS 整合題。</p></div><div class="roadmap-grid"><article class="roadmap-step"><span>01</span><h3>語法與輸入輸出</h3><p>變數、條件、迴圈、字串、陣列／串列。</p></article><article class="roadmap-step"><span>02</span><h3>題目拆解</h3><p>理解限制、整理輸入輸出、手算範例與邊界值。</p></article><article class="roadmap-step"><span>03</span><h3>常用解題技巧</h3><p>計數、累加、最大最小值、排序、搜尋與模擬。</p></article><article class="roadmap-step"><span>04</span><h3>APCS 實作練習</h3><p>由單一觀念題開始，逐步挑戰多步驟的整合題。</p></article></div><div class="roadmap-actions"><a class="button primary" href="python/practice.html#coding-challenges">Python 實作題 ↗</a><a class="button blue-button" href="cpp/practice.html#coding-challenges">C++ 實作題 ↗</a></div></section>
-    <footer class="footer"><a class="brand small-brand" href="index.html"><span class="brand-mark">⌘</span><span>CodeBase</span></a><span>用好奇心開始，用練習累積實力。</span><span>GitHub Pages Ready · v2.1</span></footer>
-  </main>
+
+<aside class="sidebar" id="sidebar" aria-label="網站主要導覽">
+<div class="side-label">學習首頁</div>
+
+<a class="side-link" data-dest="index.html" href="index.html">⌂ CodeBase 首頁</a>
+<div class="side-label">程式設計課程</div>
+
+<a class="side-link" data-dest="python/index.html" href="python/index.html">🐍 Python 基礎課程</a>
+<a class="side-link" data-dest="cpp/index.html" href="cpp/index.html">⚙ C++ 基礎課程</a>
+<a class="side-link" data-dest="python/practice.html" href="python/practice.html">🧩 Python 練習題</a>
+<a class="side-link" data-dest="cpp/practice.html" href="cpp/practice.html">🧩 C++ 練習題</a>
+<div class="side-label">網頁開發教學</div>
+
+<a class="side-link" data-dest="topics/web-languages.html" href="topics/web-languages.html">🧱 HTML／CSS／JavaScript／JSON</a>
+<a class="side-link" data-dest="topics/website-guide.html" href="topics/website-guide.html">🌐 網站如何運作</a>
+<div class="side-label">資訊安全與解謎</div>
+
+<a class="side-link" data-dest="topics/cybersecurity.html" href="topics/cybersecurity.html">🛡️ 資訊安全入門</a>
+<a class="side-link" data-dest="security/password-lab.html" href="security/password-lab.html">🔐 密碼設計與安全測試</a>
+<a class="side-link" data-dest="security/password-gate.html" href="security/password-gate.html">🗝️ 封存終端機挑戰</a>
+<a class="side-link" data-dest="security/crack-tutorial.html" href="security/crack-tutorial.html">🧭 一步一步拆解密碼鎖</a>
+<a class="side-link" data-dest="security/field-notes.html" href="security/field-notes.html">📁 封存研究筆記</a>
+<div class="side-label">APCS 與其他資源</div>
+
+<a class="side-link" data-dest="topics/linux-apcs.html" href="topics/linux-apcs.html">🐧 APCS Linux 操作</a>
+<a class="side-link" data-dest="index.html#apcs-roadmap" href="index.html#apcs-roadmap">🎯 APCS 學習路線</a>
+<a class="side-link" data-dest="https://www.programiz.com/python-programming/online-compiler" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">⌘ Online Python ↗</a>
+<a class="side-link" data-dest="https://www.onlinegdb.com/online_c++_compiler" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">⌘ Online C++ ↗</a>
+<div class="sidebar-note">
+<span class="status-dot">
+</span> 學習紀錄儲存在這台裝置</div>
+
+</aside>
+
+<main class="main-content">
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow">
+<span class="eyebrow-dot">
+</span> YOUR FIRST STEP INTO CODE</div>
+
+<h1>從零開始，<br>
+<span class="gradient-text">寫出你的第一支程式。</span>
+</h1>
+
+<p>用清楚的觀念、簡短的範例與循序漸進的練習，打好 Python 和 C++ 的程式設計基礎。</p>
+
+<div class="hero-actions">
+<a class="button primary" href="#courses">開始學習 <span>↗</span>
+</a>
+<a class="button secondary" href="#practice">前往練習</a>
+</div>
+
+<div class="hero-meta">
+<span>● 完全初學者適用</span>
+<span>⌁ 不需登入</span>
+<span>▣ 自動保存進度</span>
+</div>
+
+</div>
+
+<div class="hero-visual" aria-label="程式碼示意">
+<div class="code-window">
+<div class="window-bar">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<span>hello_world.py</span>
+</div>
+
+<div class="code-body">
+<div>
+<b>1</b>
+<span class="code-purple">message</span>
+<span class="code-muted">=</span>
+<span class="code-green">"Hello, world!"</span>
+</div>
+
+<div>
+<b>2</b>
+<span class="code-blue">print</span>
+<span class="code-muted">(</span>
+<span class="code-purple">message</span>
+<span class="code-muted">)</span>
+</div>
+
+<div class="code-empty">
+</div>
+
+<div>
+<b>3</b>
+<span class="code-muted"># Your journey starts here.</span>
+</div>
+
+</div>
+
+<div class="code-output">
+<span class="output-label">OUTPUT</span>
+<div>
+<span class="output-arrow">›</span> Hello, world!</div>
+
+<div class="output-cursor">
+</div>
+
+</div>
+
+</div>
+
+<div class="floating-chip chip-python">
+<span>🐍</span> Python</div>
+
+<div class="floating-chip chip-cpp">
+<span>⚙</span> C++</div>
+
+</div>
+
+</section>
+
+<section class="what-can-code" id="code-world" aria-label="程式可以做什麼">
+<div class="what-code-copy">
+<div class="eyebrow">CODE IS EVERYWHERE</div>
+
+<h2>程式不只是打字。<br>
+<span class="gradient-text">它能把想法變成作品。</span>
+</h2>
+
+<p>從遊戲、網站到資料分析和自動化，選一個你感興趣的方向，開始探索。</p>
+
+<div class="showcase-controls">
+<button class="showcase-dot active" type="button" data-showcase="0" aria-label="顯示遊戲開發">
+</button>
+<button class="showcase-dot" type="button" data-showcase="1" aria-label="顯示網站開發">
+</button>
+<button class="showcase-dot" type="button" data-showcase="2" aria-label="顯示資料分析">
+</button>
+<button class="showcase-dot" type="button" data-showcase="3" aria-label="顯示自動化">
+</button>
+</div>
+
+</div>
+
+<div class="showcase-stage" id="showcaseStage">
+<div class="orbit orbit-one">
+</div>
+
+<div class="orbit orbit-two">
+</div>
+
+<div class="orbit-core">
+<span id="showcaseEmoji">🎮</span>
+</div>
+
+<div class="showcase-float float-a">
+<span id="showcaseTagA">🕹️</span>
+<b id="showcaseLabelA">遊戲角色</b>
+</div>
+
+<div class="showcase-float float-b">
+<span id="showcaseTagB">⚡</span>
+<b id="showcaseLabelB">互動邏輯</b>
+</div>
+
+<div class="showcase-float float-c">
+<span id="showcaseTagC">🏆</span>
+<b id="showcaseLabelC">玩家成就</b>
+</div>
+
+<div class="showcase-caption">
+<span class="showcase-live">
+</span>
+<span id="showcaseTitle">遊戲開發</span>
+<span id="showcaseDescription">讓規則變成可以玩的世界</span>
+</div>
+
+<div class="showcase-particles" aria-hidden="true">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats-grid">
+<div class="stat-card">
+<span class="stat-icon purple">▤</span>
+<div>
+<strong>30</strong>
+<span>教學單元（含進階）</span>
+</div>
+
+</div>
+
+<div class="stat-card">
+<span class="stat-icon blue">⌘</span>
+<div>
+<strong>2</strong>
+<span>程式語言</span>
+</div>
+
+</div>
+
+<div class="stat-card">
+<span class="stat-icon green">✓</span>
+<div>
+<strong id="completedCount">0</strong>
+<span>已完成單元</span>
+</div>
+
+</div>
+
+<div class="stat-card">
+<span class="stat-icon orange">✦</span>
+<div>
+<strong>16</strong>
+<span>實作挑戰題</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="section-block" id="courses">
+<div class="section-heading">
+<div>
+<div class="eyebrow">CHOOSE YOUR PATH</div>
+
+<h2>選擇你的學習路線</h2>
+
+</div>
+
+<div class="section-heading-actions">
+<p>兩種語言，從基礎觀念開始。</p>
+
+<button class="button secondary reset-progress" id="resetLearningProgress" type="button">↺ 重設學習紀錄</button>
+</div>
+
+</div>
+
+<div class="course-grid">
+<article class="course-card python-card">
+<div class="course-top">
+<span class="language-icon">🐍</span>
+<span class="tag purple-tag">BEGINNER FRIENDLY</span>
+</div>
+
+<h3>Python 學習路線</h3>
+
+<p>從基礎語法進階到字典、檔案、排序搜尋與小型專題。</p>
+
+<div class="course-details">
+<span>27 個單元</span>
+<span>入門・循序漸進</span>
+</div>
+
+<div class="progress-track">
+<span id="pythonProgress" style="width:0%">
+</span>
+</div>
+
+<div class="progress-caption">
+<span>學習進度</span>
+<span id="pythonProgressText">0 / 10</span>
+</div>
+
+<a class="button primary full" href="python/index.html">進入 Python 課程 <span>→</span>
+</a>
+</article>
+
+<article class="course-card cpp-card">
+<div class="course-top">
+<span class="language-icon">⚙️</span>
+<span class="tag blue-tag">FOUNDATION</span>
+</div>
+
+<h3>C++ 學習路線</h3>
+
+<p>從基礎語法進階到二維陣列、標準函式庫與小型專題。</p>
+
+<div class="course-details">
+<span>27 個單元</span>
+<span>入門・循序漸進</span>
+</div>
+
+<div class="progress-track">
+<span id="cppProgress" style="width:0%">
+</span>
+</div>
+
+<div class="progress-caption">
+<span>學習進度</span>
+<span id="cppProgressText">0 / 10</span>
+</div>
+
+<a class="button blue-button full" href="cpp/index.html">進入 C++ 課程 <span>→</span>
+</a>
+</article>
+
+</div>
+
+</section>
+
+<section class="section-block practice-section" id="practice">
+<div class="section-heading">
+<div>
+<div class="eyebrow">PRACTICE MAKES PROGRESS</div>
+
+<h2>練習中心</h2>
+
+</div>
+
+<p>先試著回答，再查看解析。</p>
+
+</div>
+
+<div class="practice-panel">
+<div class="practice-intro">
+<span class="practice-star">✦</span>
+<div>
+<h3>每日一題 <span class="daily-date" id="dailyDate">
+</span>
+</h3>
+
+<p>每天一題；作答紀錄會保存在這台裝置，當天完成後會顯示「已作答」。</p>
+
+</div>
+
+</div>
+
+<div class="quiz-card" id="lobbyQuiz">
+<div class="quiz-meta">
+<span class="tag purple-tag">PYTHON · 入門</span>
+<span>單選題</span>
+</div>
+
+<h4 id="dailyQuestion">執行 `print(2 + 3)` 時，畫面會顯示什麼？</h4>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. `2 + 3`</button>
+<button class="quiz-option" data-answer="b">B. `5`</button>
+<button class="quiz-option" data-answer="c">C. `23`</button>
+<button class="quiz-option" data-answer="d">D. 發生錯誤</button>
+</div>
+
+<div class="quiz-feedback" id="lobbyFeedback" aria-live="polite">
+</div>
+
+<div id="dailyStatus" aria-live="polite">
+</div>
+
+</div>
+
+<div class="daily-links">
+<a class="text-link" href="python/practice.html">Python 題庫 20 題 ↗</a>
+<a class="text-link" href="cpp/practice.html">C++ 題庫 20 題 ↗</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="section-block" id="web-safety-learning">
+<div class="section-heading">
+<div>
+<div class="eyebrow">WEB LITERACY & DIGITAL SAFETY</div>
+
+<h2>網站與資訊安全學院</h2>
+
+</div>
+
+<p>不只學寫程式，也理解網站背後的運作與數位安全。</p>
+
+</div>
+
+<div class="learning-hub-grid">
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🧱</span>
+<h3>HTML、CSS、JavaScript、JSON</h3>
+
+<p>從零認識網頁骨架、外觀、互動程式與資料格式，附可直接操作的瀏覽器範例。</p>
+
+<a class="text-link" href="topics/web-languages.html">開始網頁開發教學 ↗</a>
+</article>
+
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🌐</span>
+<h3>網站如何運作</h3>
+
+<p>認識 HTML、CSS、JavaScript、瀏覽器、GitHub Pages 和 localStorage，了解這個網站本身如何運作。</p>
+
+<a class="text-link" href="topics/website-guide.html">進入完整教學 ↗</a>
+</article>
+
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🛡️</span>
+<h3>資訊安全入門</h3>
+
+<p>學習釣魚防範、帳號保護、MFA、軟體更新、備份與負責任的資安習慣。</p>
+
+<a class="text-link" href="topics/cybersecurity.html">進入完整教學 ↗</a>
+</article>
+
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🔐</span>
+<h3>密碼設計與安全測試</h3>
+
+<p>了解密碼強度、常見猜測風險、雜湊與 salt，並用虛構範例做簡單檢查。</p>
+
+<a class="text-link" href="security/password-lab.html">進入安全實驗室 ↗</a>
+</article>
+
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🗝️</span>
+<h3>封存終端機解謎</h3>
+
+<p>挑戰一個虛構的前端密碼鎖，再透過分段線索理解為何前端驗證不能保護真正的秘密。</p>
+
+<a class="text-link" href="security/password-gate.html">進入挑戰 ↗</a>
+</article>
+
+<article class="learning-hub-card">
+<span class="learning-hub-icon">🧭</span>
+<h3>一步一步拆解密碼鎖</h3>
+
+<p>從檢視原始碼開始，逐步學會 SHA-256、Python 候選清單比對，以及前端密碼鎖的安全限制。</p>
+
+<a class="text-link" href="security/crack-tutorial.html">閱讀完整教學 ↗</a>
+</article>
+
+</div>
+
+</section>
+
+<section class="section-block">
+<div class="section-heading">
+<div>
+<div class="eyebrow">EXAM ENVIRONMENT</div>
+
+<h2>熟悉 APCS 考場操作</h2>
+
+</div>
+
+<p>練習 Linux 終端機、執行 Python、編譯 C++，以及常見錯誤排查。</p>
+
+</div>
+
+<div class="roadmap-actions">
+<a class="button primary" href="topics/linux-apcs.html">🐧 開始 Linux 操作教學 ↗</a>
+</div>
+
+</section>
+
+<section class="section-block apcs-roadmap" id="apcs-roadmap">
+<div class="section-heading">
+<div>
+<div class="eyebrow">YOUR NEXT LEVEL</div>
+
+<h2>從基礎走向 APCS：27 單元路線</h2>
+
+</div>
+
+<p>從語法、中階資料處理，逐步進入演算法與 APCS 整合題。</p>
+
+</div>
+
+<div class="roadmap-grid">
+<article class="roadmap-step">
+<span>01</span>
+<h3>語法與輸入輸出</h3>
+
+<p>變數、條件、迴圈、字串、陣列／串列。</p>
+
+</article>
+
+<article class="roadmap-step">
+<span>02</span>
+<h3>題目拆解</h3>
+
+<p>理解限制、整理輸入輸出、手算範例與邊界值。</p>
+
+</article>
+
+<article class="roadmap-step">
+<span>03</span>
+<h3>常用解題技巧</h3>
+
+<p>計數、累加、最大最小值、排序、搜尋與模擬。</p>
+
+</article>
+
+<article class="roadmap-step">
+<span>04</span>
+<h3>APCS 實作練習</h3>
+
+<p>由單一觀念題開始，逐步挑戰多步驟的整合題。</p>
+
+</article>
+
+</div>
+
+<div class="roadmap-actions">
+<a class="button primary" href="python/practice.html#coding-challenges">Python 實作題 ↗</a>
+<a class="button blue-button" href="cpp/practice.html#coding-challenges">C++ 實作題 ↗</a>
+</div>
+
+</section>
+
+<footer class="footer">
+<a class="brand small-brand" href="index.html">
+<span class="brand-mark">⌘</span>
+<span>CodeBase</span>
+</a>
+<span>用好奇心開始，用練習累積實力。</span>
+<span>GitHub Pages Ready · v3.15</span>
+</footer>
+
+</main>
+
 </body>
+
 </html>

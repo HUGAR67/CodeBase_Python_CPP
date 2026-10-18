@@ -2,7 +2,7 @@
 
 一個以 APCS 與程式解題能力為方向的繁體中文學習網站，預設深色模式，支援 GitHub Pages 靜態部署。
 
-## 目前版本：v3.12
+## 目前版本：v3.16
 
 ### 主要功能
 - Python 與 C++ 各有 27 個教學單元，從基礎語法延伸到資料結構、演算法與 APCS 綜合練習。
@@ -10,6 +10,37 @@
 - 內建課程索引、練習頁、單元導覽、學習進度紀錄與深色／淺色主題切換。
 - 進度與主題偏好儲存在瀏覽器 `localStorage`；不需要登入。
 - 提供外部線上編輯器連結，方便執行 Python 或編譯 C++。
+
+## 課程規劃（每種語言 27 單元）
+- **UNIT 01–10｜基礎**：語法、輸入輸出、條件、迴圈、字串、陣列／串列、函式。
+- **UNIT 11–15｜中階**：巢狀迴圈、資料結構、檔案、排序搜尋、除錯與小專題。
+- **UNIT 16–20｜中高階**：遞迴、STL／資料結構、堆疊佇列、前綴和、雙指標與二分搜尋。
+- **UNIT 21–27｜高階挑戰**：貪心、動態規劃、圖論、數論、位元運算與 APCS 整合。
+
+## 線上編輯器
+- Python：[Programiz Online Python Compiler](https://www.programiz.com/python-programming/online-compiler)
+- C++：[OnlineGDB C++ Compiler](https://www.onlinegdb.com/online_c++_compiler)
+
+## ZeroJudge 延伸練習
+- [a001｜哈囉](https://zerojudge.tw/ShowProblem?problemid=a001)
+- [a002｜簡易加法](https://zerojudge.tw/ShowProblem?problemid=a002)
+- [a003｜兩光法師占卜術](https://zerojudge.tw/ShowProblem?problemid=a003)
+- [a024｜最大公因數（GCD）](https://zerojudge.tw/ShowProblem?problemid=a024)
+
+題目連結由 ZeroJudge 提供；請依各單元的推薦說明選擇適合的題目練習。
+
+## GitHub Pages 部署
+- 1. 將本專案所有檔案與資料夾放在 GitHub repository 根目錄，不要再包進另一層資料夾。
+- 2. 開啟 repository 的 **Settings → Pages**。
+- 3. 在 Build and deployment 選擇 **Deploy from a branch**。
+- 4. 選擇 `main` 分支與 `/(root)`，然後儲存。
+- 5. 等待部署完成後，使用 GitHub Pages 網址開啟網站。
+
+## 專案注意事項
+- 根目錄的 `index.html` 是網站首頁；`README.md` 是 GitHub 儲存庫的說明文件，請不要互相改名取代。
+- 本網站是靜態網站，不會直接在頁面內執行 Python 或編譯 C++；程式執行由外部線上編輯器提供。
+- 學習進度與主題偏好儲存在目前瀏覽器的 `localStorage`，清除瀏覽器資料可能會使紀錄消失。
+
 
 ## 版本更新紀錄
 
@@ -83,7 +114,7 @@
 - 保留預設深色模式及原有課程、練習題與進度功能。
 
 
-## v3.7（APCS Linux 考場操作教學）
+### v3.7（APCS Linux 考場操作教學）
 
 - 新增 `linux-apcs.html`，教學內容包含 Linux 桌面與終端機、`pwd`／`ls`／`cd`／`mkdir` 等基本指令。
 - 加入 Python 程式執行、C++ 使用 g++ 編譯與執行、輸入檔重導向、常見錯誤排查及考前檢查清單。
@@ -92,13 +123,13 @@
 - 提醒考場系統與可用工具可能依年度及官方規定不同，實際操作以當年度應試說明為準。
 
 
-## v3.8（程式動畫與主題切換）
+### v3.8（程式動畫與主題切換）
 - 首頁程式碼示範新增約 5 秒的逐行出現動畫，接著顯示執行輸出；動畫只在載入頁面時播放一次。
 - 深色／淺色模式切換加入約 0.5 秒的平滑色彩與背景過渡。
 - 尊重系統「減少動態效果」設定，必要時停用動畫並確保程式碼仍完整顯示。
 
 
-## v3.10（網站素養、資訊安全與每日作答紀錄）
+### v3.10（網站素養、資訊安全與每日作答紀錄）
 - 每日一題改為依本機日期保存作答結果；當天作答後會顯示「今日題目已作答」，並鎖定選項，避免重新整理後被誤認為尚未作答。隔天自動切換到當日題目。
 - 新增「網站如何運作」完整單元：HTML／CSS／JavaScript、瀏覽器載入流程、GitHub Pages、localStorage、前端與後端差異。
 - 新增「資訊安全入門」單元：機密性／完整性／可用性、釣魚與社交工程、帳號防護、MFA、更新備份與事件處理。
@@ -108,48 +139,39 @@
 - 首頁導覽、封存終端機與密碼實驗室均新增「一步一步拆解密碼鎖」入口。
 
 
-## v3.11 更新
+### v3.11 更新
 - ZIP 解壓縮後直接看到網站檔案，不再多包一層專案資料夾。
 - 整理分類：`python/`、`cpp/`、`topics/`（網站運作、資安、Linux）、`security/`（密碼實驗與解謎）、`shared/`（共用 CSS/JS）。
 - 新增 `security/password-gate.html` 前端密碼鎖解謎、`security/field-notes.html` 分段式教學筆記，以及 `security/crack-tutorial.html` 初學者逐步教學。
 - 明確說明靜態前端密碼鎖不適用於真實機密；教學僅供授權練習。
 
 
-## v3.12 更新（密碼教學改為瀏覽器互動）
+### v3.12 更新（密碼教學改為瀏覽器互動）
 - 移除密碼拆解教學對 `hash_demo.py`、Python 安裝及終端機操作的依賴。
 - `security/crack-tutorial.html` 現在使用瀏覽器內建 Web Crypto API，直接計算虛構文字的 SHA-256。
 - 新增網頁內候選字串比對互動，逐步顯示固定教學清單的比對過程，不會連線或登入任何服務。
 - 加入完整 JavaScript 範例與逐行解釋；透過 GitHub Pages HTTPS 開啟即可操作，無須安裝其他程式。
 - ZIP 只保留根目錄的一份網站結構，不再附帶重複的 `codebase_v39/` 舊資料夾。
 
+### v3.13｜導覽一致化與網頁語言入門
+- 將所有頁面的主要側邊導覽統一為同一組分類與入口，並由共用 `shared/app.js` 根據目前頁面自動設定相對連結與目前頁面標示。
+- 新增 `topics/web-languages.html`：從零教學 HTML、CSS、JavaScript、JSON，附即時預覽、點擊互動、CSS 顏色切換與 JSON 資料顯示。
+- 密碼鎖教學增加明確程式碼定位說明：搜尋 `expectedHash` 可找到預期雜湊值，搜尋 `if(hash===expectedHash)` 可理解比較條件；並說明雜湊不是明文密碼。
+- 首頁新增 HTML／CSS／JavaScript／JSON 教學卡片，所有頁面側邊導覽也新增該教學入口。
+- 移除不必要的 `shared/README.md`，共用程式檔集中保留在 `shared/app.js` 與 `shared/style.css`。
 
-## 課程規劃（每種語言 27 單元）
-- **UNIT 01–10｜基礎**：語法、輸入輸出、條件、迴圈、字串、陣列／串列、函式。
-- **UNIT 11–15｜中階**：巢狀迴圈、資料結構、檔案、排序搜尋、除錯與小專題。
-- **UNIT 16–20｜中高階**：遞迴、STL／資料結構、堆疊佇列、前綴和、雙指標與二分搜尋。
-- **UNIT 21–27｜高階挑戰**：貪心、動態規劃、圖論、數論、位元運算與 APCS 整合。
 
-## 線上編輯器
-- Python：[Programiz Online Python Compiler](https://www.programiz.com/python-programming/online-compiler)
-- C++：[OnlineGDB C++ Compiler](https://www.onlinegdb.com/online_c++_compiler)
+### v3.14｜修正課程導覽重複高亮
+- 修正進入 Python／C++ 個別單元時，課程首頁連結也同時被標示為目前頁面的問題。
+- 側邊導覽現在只會高亮與目前網址完全對應的項目；單元目錄則只標示當前單元，避免看起來像同時選中了兩個單元。
+- 保留原有頁面、課程內容、深色模式與學習進度功能。
 
-## ZeroJudge 延伸練習
-- [a001｜哈囉](https://zerojudge.tw/ShowProblem?problemid=a001)
-- [a002｜簡易加法](https://zerojudge.tw/ShowProblem?problemid=a002)
-- [a003｜兩光法師占卜術](https://zerojudge.tw/ShowProblem?problemid=a003)
-- [a024｜最大公因數（GCD）](https://zerojudge.tw/ShowProblem?problemid=a024)
 
-題目連結由 ZeroJudge 提供；請依各單元的推薦說明選擇適合的題目練習。
+### v3.15｜統一頁尾版本資訊
+- 修正首頁最底部仍顯示 `GitHub Pages Ready · v2.1` 的舊版本文字。
+- 將網站中帶版本號的頁尾統一更新為 `v3.15`，避免首頁與其他教學頁顯示不同版本。
 
-## GitHub Pages 部署
-1. 將本專案所有檔案與資料夾放在 GitHub repository 根目錄，不要再包進另一層資料夾。
-2. 開啟 repository 的 **Settings → Pages**。
-3. 在 Build and deployment 選擇 **Deploy from a branch**。
-4. 選擇 `main` 分支與 `/(root)`，然後儲存。
-5. 等待部署完成後，使用 GitHub Pages 網址開啟網站。
-
-## 專案注意事項
-- 根目錄的 `index.html` 是網站首頁；`README.md` 是 GitHub 儲存庫的說明文件，請不要互相改名取代。
-- 本網站是靜態網站，不會直接在頁面內執行 Python 或編譯 C++；程式執行由外部線上編輯器提供。
-- 學習進度與主題偏好儲存在目前瀏覽器的 `localStorage`，清除瀏覽器資料可能會使紀錄消失。
-
+### v3.16｜整理程式碼換行與縮排
+- 重新整理所有 HTML 頁面的標籤換行，避免整段 HTML 擠在單一長行。
+- 整理共用 CSS 的選擇器、區塊與屬性換行，方便使用 Notepad++ 或 GitHub 編輯。
+- 保留 JavaScript 與 HTML 內嵌 script/style 的原始程式內容，避免純排版處理改變互動行為。

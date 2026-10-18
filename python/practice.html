@@ -1,47 +1,670 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python 練習中心｜CodeBase</title><link rel="stylesheet" href="../shared/style.css"><script src="../shared/app.js" defer></script></head><body><header class="topbar">
-  <div class="brand-stack">
-    <a class="brand" href="../index.html"><span class="brand-mark">⌘</span><span>CodeBase<small>PROGRAMMING ACADEMY</small></span></a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">導覽</button>
-  </div>
-  <div class="topbar-spacer"></div>
-  <span class="topbar-caption">Python 練習</span>
-  <button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
-</header><aside class="sidebar" id="sidebar"><div class="side-label">學習空間</div><a class="side-link" href="../index.html">⌂ Lobby 總首頁</a><a class="side-link" href="../python/index.html">🐍 Python 課程</a><a class="side-link" href="../cpp/index.html">⚙ C++ 課程</a><div class="side-label">網站與資訊安全</div><a class="side-link" href="../topics/website-guide.html">🌐 網站如何運作</a><a class="side-link" href="../topics/cybersecurity.html">🛡️ 資訊安全入門</a><a class="side-link" href="../security/password-lab.html">🔐 密碼設計與安全測試</a><div class="side-label">練習中心</div><a class="side-link selected" href="practice.html">✦ 題庫測驗</a><a class="side-link" href="index.html">📚 返回課程</a><a class="side-link" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">⌘ 線上編輯器 ↗</a><div class="side-label">實作與進階</div><a class="side-link" href="../python/practice.html#coding-challenges">🧩 Python 實作題</a><a class="side-link" href="../cpp/practice.html#coding-challenges">🧩 C++ 實作題</a><a class="side-link" href="../index.html#apcs-roadmap">🎯 APCS 學習路線</a></aside><main class="main-content"><div class="eyebrow">🐍 · PRACTICE CENTER</div><h1 style="font-size:clamp(27px,3vw,36px);margin:0 0 8px">Python 題庫練習</h1><p style="color:var(--muted);margin:0 0 20px">選擇題可反覆作答；下方另有 8 題實作題，開始練習 APCS 常見的輸入、判斷、迴圈與陣列能力。</p><div class="practice-toolbar"><span>題庫挑戰 · 觀念與語法</span><button class="button secondary" id="resetAllQuestions" type="button">↻ 全部重新作答</button></div><div class="practice-list"><article class="practice-question" data-answer="b" data-explanation="* 表示乘法。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 01</span><span>單選題</span></div><h3>1. print(3 * 4) 的輸出是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 7</button><button class="quiz-option" data-answer="b">B. 12</button><button class="quiz-option" data-answer="c">C. 34</button><button class="quiz-option" data-answer="d">D. 錯誤</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="c" data-explanation="input() 取得的是字串，需要數字時可用 int() 或 float() 轉換。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 02</span><span>單選題</span></div><h3>2. input() 讀到的資料預設是什麼型態？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. int</button><button class="quiz-option" data-answer="b">B. float</button><button class="quiz-option" data-answer="c">C. str</button><button class="quiz-option" data-answer="d">D. bool</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="range(4) 從 0 開始，不包含終點 4。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 03</span><span>單選題</span></div><h3>3. range(4) 會產生哪些數字？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 1, 2, 3, 4</button><button class="quiz-option" data-answer="b">B. 0, 1, 2, 3</button><button class="quiz-option" data-answer="c">C. 0, 1, 2, 3, 4</button><button class="quiz-option" data-answer="d">D. 4</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="= 是指定值；== 才是比較是否相等。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 04</span><span>單選題</span></div><h3>4. 哪個運算子用來判斷兩值是否相等？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. =</button><button class="quiz-option" data-answer="b">B. ==</button><button class="quiz-option" data-answer="c">C. !=</button><button class="quiz-option" data-answer="d">D. =></button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="len() 回傳串列元素數量。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 05</span><span>單選題</span></div><h3>5. len([8, 9, 10]) 的結果是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 2</button><button class="quiz-option" data-answer="b">B. 3</button><button class="quiz-option" data-answer="c">C. 10</button><button class="quiz-option" data-answer="d">D. 錯誤</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="c" data-explanation="list.append(value) 會將元素加到串列末尾。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 06</span><span>單選題</span></div><h3>6. 要在串列末尾加入元素，常用哪個方法？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. add()</button><button class="quiz-option" data-answer="b">B. push()</button><button class="quiz-option" data-answer="c">C. append()</button><button class="quiz-option" data-answer="d">D. insert_end()</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="while 會在條件為 True 時反覆執行。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 07</span><span>單選題</span></div><h3>7. while 迴圈最常見的用途是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 只執行一次</button><button class="quiz-option" data-answer="b">B. 條件成立時重複執行</button><button class="quiz-option" data-answer="c">C. 宣告函式</button><button class="quiz-option" data-answer="d">D. 建立字典</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="c" data-explanation="return 會回傳值；print 只負責顯示。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 08</span><span>單選題</span></div><h3>8. 函式要把計算結果交回呼叫處，使用什麼？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. print</button><button class="quiz-option" data-answer="b">B. break</button><button class="quiz-option" data-answer="c">C. return</button><button class="quiz-option" data-answer="d">D. input</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="字典用 key 對應 value。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 09</span><span>單選題</span></div><h3>9. 字典資料通常以什麼方式查找？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 索引位置必須是整數</button><button class="quiz-option" data-answer="b">B. key 對應 value</button><button class="quiz-option" data-answer="c">C. 只能存數字</button><button class="quiz-option" data-answer="d">D. 只能存一筆資料</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="串列使用方括號 []。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 10</span><span>單選題</span></div><h3>10. 下列哪個是合法的 Python 清單？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. x = (1, 2]</button><button class="quiz-option" data-answer="b">B. x = [1, 2]</button><button class="quiz-option" data-answer="c">C. x = {1, 2]</button><button class="quiz-option" data-answer="d">D. x = <1, 2></button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="會執行 2、3、4、5，共四次。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 11</span><span>單選題</span></div><h3>11. for i in range(2, 6) 會跑幾次？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 3</button><button class="quiz-option" data-answer="b">B. 4</button><button class="quiz-option" data-answer="c">C. 5</button><button class="quiz-option" data-answer="d">D. 6</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="c" data-explanation="int("42") 會得到整數 42。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 12</span><span>單選題</span></div><h3>12. 想將字串轉成整數，通常用？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. str()</button><button class="quiz-option" data-answer="b">B. float()</button><button class="quiz-option" data-answer="c">C. int()</button><button class="quiz-option" data-answer="d">D. list()</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="a" data-explanation="% 是取餘數，9 除以 4 餘 1。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 13</span><span>單選題</span></div><h3>13. 9 % 4 的結果是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 1</button><button class="quiz-option" data-answer="b">B. 2</button><button class="quiz-option" data-answer="c">C. 2.25</button><button class="quiz-option" data-answer="d">D. 0</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="c" data-explanation="集合中的元素不重複。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 14</span><span>單選題</span></div><h3>14. 集合 set 的特性是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 一定保留重複元素</button><button class="quiz-option" data-answer="b">B. 元素必須是字串</button><button class="quiz-option" data-answer="c">C. 會去除重複元素</button><button class="quiz-option" data-answer="d">D. 只能有一個元素</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="a" data-explanation="可以捕捉預期的錯誤並提供適當處理。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 15</span><span>單選題</span></div><h3>15. try/except 主要用來做什麼？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 處理可能發生的例外</button><button class="quiz-option" data-answer="b">B. 排序串列</button><button class="quiz-option" data-answer="c">C. 定義類別</button><button class="quiz-option" data-answer="d">D. 停止電腦</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="Python 字串索引從 0 開始。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 16</span><span>單選題</span></div><h3>16. 字串 "cat" 的第一個字元索引是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 1</button><button class="quiz-option" data-answer="b">B. 0</button><button class="quiz-option" data-answer="c">C. -2</button><button class="quiz-option" data-answer="d">D. 3</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="a" data-explanation="list.sort() 會原地排序。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 17</span><span>單選題</span></div><h3>17. 列表排序由小到大可用？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. sort()</button><button class="quiz-option" data-answer="b">B. reverse_only()</button><button class="quiz-option" data-answer="c">C. order()</button><button class="quiz-option" data-answer="d">D. small()</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="偶數除以 2 的餘數為 0。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 18</span><span>單選題</span></div><h3>18. 哪個條件代表 n 是偶數？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. n / 2 == 0</button><button class="quiz-option" data-answer="b">B. n % 2 == 0</button><button class="quiz-option" data-answer="c">C. n == 2</button><button class="quiz-option" data-answer="d">D. n // 2 == 0</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="b" data-explanation="break 會直接結束所在的迴圈。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 19</span><span>單選題</span></div><h3>19. break 在迴圈中的作用是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 跳過本次輸出</button><button class="quiz-option" data-answer="b">B. 離開目前迴圈</button><button class="quiz-option" data-answer="c">C. 重新啟動程式</button><button class="quiz-option" data-answer="d">D. 宣告變數</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article><article class="practice-question" data-answer="a" data-explanation="參數讓同一個函式能處理不同資料。"><div class="quiz-meta"><span class="tag purple-tag">QUESTION 20</span><span>單選題</span></div><h3>20. 函式參數的用途是？</h3><div class="quiz-options"><button class="quiz-option" data-answer="a">A. 傳入需要處理的資料</button><button class="quiz-option" data-answer="b">B. 自動關閉程式</button><button class="quiz-option" data-answer="c">C. 只能輸出文字</button><button class="quiz-option" data-answer="d">D. 取代所有變數</button></div><div class="answer-explanation" aria-live="polite"></div><button class="quiz-reset" type="button">↻ 重新作答</button></article></div><section class="section-block coding-challenges" id="coding-challenges">
-  <div class="section-heading"><div><div class="eyebrow">ZEROJUDGE STYLE · APCS PREP</div><h2>實作題挑戰</h2></div><p>讀懂題目、分析輸入輸出、寫程式、測試邊界案例。</p></div>
-  <div class="challenge-banner"><span class="challenge-banner-icon">🐍</span><div><strong>從基礎題走向 APCS</strong><p>這些題目採用類似線上評測的題目格式，附輸入／輸出說明與範例。請在編輯器自行執行測試；目前網站不會自動提交程式或判定所有測資。</p></div></div>
-  <div class="coding-task-list"><article class="coding-task" data-task="python-p01">
-  <div class="coding-task-head"><div><span class="task-id">P01</span><span class="task-difficulty">入門</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>計算總和</h3><p class="task-description">讀入一個整數 N，接著讀入 N 個整數，輸出這些數字的總和。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>第一行為 N；第二行有 N 個整數。</p></section><section><h4>輸出說明</h4><p>輸出一個整數，代表總和。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>5
-1 2 3 4 5</pre></section><section><h4>範例輸出</h4><pre>15</pre></section></div>
-  <p class="task-hint">能力重點：練習 input、split、整數轉換與累加。</p>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python 練習中心｜CodeBase</title>
+<link rel="stylesheet" href="../shared/style.css"><script src="../shared/app.js" defer></script>
+</head>
+
+<body>
+<header class="topbar">
+<div class="brand-stack">
+<a class="brand" href="../index.html">
+<span class="brand-mark">⌘</span>
+<span>CodeBase<small>PROGRAMMING ACADEMY</small>
+</span>
+</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="顯示或隱藏導覽選單" aria-expanded="true">導覽</button>
+</div>
+
+<div class="topbar-spacer">
+</div>
+
+<span class="topbar-caption">Python 練習</span>
+<button class="theme-toggle" id="themeToggle" type="button">☾ 深色模式</button>
+</header>
+
+<aside class="sidebar" id="sidebar" aria-label="網站主要導覽">
+<div class="side-label">學習首頁</div>
+
+<a class="side-link" data-dest="index.html" href="index.html">⌂ CodeBase 首頁</a>
+<div class="side-label">程式設計課程</div>
+
+<a class="side-link" data-dest="python/index.html" href="python/index.html">🐍 Python 基礎課程</a>
+<a class="side-link" data-dest="cpp/index.html" href="cpp/index.html">⚙ C++ 基礎課程</a>
+<a class="side-link" data-dest="python/practice.html" href="python/practice.html">🧩 Python 練習題</a>
+<a class="side-link" data-dest="cpp/practice.html" href="cpp/practice.html">🧩 C++ 練習題</a>
+<div class="side-label">網頁開發教學</div>
+
+<a class="side-link" data-dest="topics/web-languages.html" href="topics/web-languages.html">🧱 HTML／CSS／JavaScript／JSON</a>
+<a class="side-link" data-dest="topics/website-guide.html" href="topics/website-guide.html">🌐 網站如何運作</a>
+<div class="side-label">資訊安全與解謎</div>
+
+<a class="side-link" data-dest="topics/cybersecurity.html" href="topics/cybersecurity.html">🛡️ 資訊安全入門</a>
+<a class="side-link" data-dest="security/password-lab.html" href="security/password-lab.html">🔐 密碼設計與安全測試</a>
+<a class="side-link" data-dest="security/password-gate.html" href="security/password-gate.html">🗝️ 封存終端機挑戰</a>
+<a class="side-link" data-dest="security/crack-tutorial.html" href="security/crack-tutorial.html">🧭 一步一步拆解密碼鎖</a>
+<a class="side-link" data-dest="security/field-notes.html" href="security/field-notes.html">📁 封存研究筆記</a>
+<div class="side-label">APCS 與其他資源</div>
+
+<a class="side-link" data-dest="topics/linux-apcs.html" href="topics/linux-apcs.html">🐧 APCS Linux 操作</a>
+<a class="side-link" data-dest="index.html#apcs-roadmap" href="index.html#apcs-roadmap">🎯 APCS 學習路線</a>
+<a class="side-link" data-dest="https://www.programiz.com/python-programming/online-compiler" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">⌘ Online Python ↗</a>
+<a class="side-link" data-dest="https://www.onlinegdb.com/online_c++_compiler" href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener">⌘ Online C++ ↗</a>
+<div class="sidebar-note">
+<span class="status-dot">
+</span> 學習紀錄儲存在這台裝置</div>
+
+</aside>
+
+<main class="main-content">
+<div class="eyebrow">🐍 · PRACTICE CENTER</div>
+
+<h1 style="font-size:clamp(27px,3vw,36px);margin:0 0 8px">Python 題庫練習</h1>
+
+<p style="color:var(--muted);margin:0 0 20px">選擇題可反覆作答；下方另有 8 題實作題，開始練習 APCS 常見的輸入、判斷、迴圈與陣列能力。</p>
+
+<div class="practice-toolbar">
+<span>題庫挑戰 · 觀念與語法</span>
+<button class="button secondary" id="resetAllQuestions" type="button">↻ 全部重新作答</button>
+</div>
+
+<div class="practice-list">
+<article class="practice-question" data-answer="b" data-explanation="* 表示乘法。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 01</span>
+<span>單選題</span>
+</div>
+
+<h3>1. print(3 * 4) 的輸出是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 7</button>
+<button class="quiz-option" data-answer="b">B. 12</button>
+<button class="quiz-option" data-answer="c">C. 34</button>
+<button class="quiz-option" data-answer="d">D. 錯誤</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="c" data-explanation="input() 取得的是字串，需要數字時可用 int() 或 float() 轉換。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 02</span>
+<span>單選題</span>
+</div>
+
+<h3>2. input() 讀到的資料預設是什麼型態？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. int</button>
+<button class="quiz-option" data-answer="b">B. float</button>
+<button class="quiz-option" data-answer="c">C. str</button>
+<button class="quiz-option" data-answer="d">D. bool</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="range(4) 從 0 開始，不包含終點 4。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 03</span>
+<span>單選題</span>
+</div>
+
+<h3>3. range(4) 會產生哪些數字？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 1, 2, 3, 4</button>
+<button class="quiz-option" data-answer="b">B. 0, 1, 2, 3</button>
+<button class="quiz-option" data-answer="c">C. 0, 1, 2, 3, 4</button>
+<button class="quiz-option" data-answer="d">D. 4</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="= 是指定值；== 才是比較是否相等。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 04</span>
+<span>單選題</span>
+</div>
+
+<h3>4. 哪個運算子用來判斷兩值是否相等？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. =</button>
+<button class="quiz-option" data-answer="b">B. ==</button>
+<button class="quiz-option" data-answer="c">C. !=</button>
+<button class="quiz-option" data-answer="d">D. =>
+</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="len() 回傳串列元素數量。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 05</span>
+<span>單選題</span>
+</div>
+
+<h3>5. len([8, 9, 10]) 的結果是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 2</button>
+<button class="quiz-option" data-answer="b">B. 3</button>
+<button class="quiz-option" data-answer="c">C. 10</button>
+<button class="quiz-option" data-answer="d">D. 錯誤</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="c" data-explanation="list.append(value) 會將元素加到串列末尾。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 06</span>
+<span>單選題</span>
+</div>
+
+<h3>6. 要在串列末尾加入元素，常用哪個方法？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. add()</button>
+<button class="quiz-option" data-answer="b">B. push()</button>
+<button class="quiz-option" data-answer="c">C. append()</button>
+<button class="quiz-option" data-answer="d">D. insert_end()</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="while 會在條件為 True 時反覆執行。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 07</span>
+<span>單選題</span>
+</div>
+
+<h3>7. while 迴圈最常見的用途是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 只執行一次</button>
+<button class="quiz-option" data-answer="b">B. 條件成立時重複執行</button>
+<button class="quiz-option" data-answer="c">C. 宣告函式</button>
+<button class="quiz-option" data-answer="d">D. 建立字典</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="c" data-explanation="return 會回傳值；print 只負責顯示。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 08</span>
+<span>單選題</span>
+</div>
+
+<h3>8. 函式要把計算結果交回呼叫處，使用什麼？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. print</button>
+<button class="quiz-option" data-answer="b">B. break</button>
+<button class="quiz-option" data-answer="c">C. return</button>
+<button class="quiz-option" data-answer="d">D. input</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="字典用 key 對應 value。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 09</span>
+<span>單選題</span>
+</div>
+
+<h3>9. 字典資料通常以什麼方式查找？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 索引位置必須是整數</button>
+<button class="quiz-option" data-answer="b">B. key 對應 value</button>
+<button class="quiz-option" data-answer="c">C. 只能存數字</button>
+<button class="quiz-option" data-answer="d">D. 只能存一筆資料</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="串列使用方括號 []。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 10</span>
+<span>單選題</span>
+</div>
+
+<h3>10. 下列哪個是合法的 Python 清單？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. x = (1, 2]</button>
+<button class="quiz-option" data-answer="b">B. x = [1, 2]</button>
+<button class="quiz-option" data-answer="c">C. x = {1, 2]</button>
+<button class="quiz-option" data-answer="d">D. x = <1, 2>
+</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="會執行 2、3、4、5，共四次。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 11</span>
+<span>單選題</span>
+</div>
+
+<h3>11. for i in range(2, 6) 會跑幾次？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 3</button>
+<button class="quiz-option" data-answer="b">B. 4</button>
+<button class="quiz-option" data-answer="c">C. 5</button>
+<button class="quiz-option" data-answer="d">D. 6</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="c" data-explanation="int("42") 會得到整數 42。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 12</span>
+<span>單選題</span>
+</div>
+
+<h3>12. 想將字串轉成整數，通常用？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. str()</button>
+<button class="quiz-option" data-answer="b">B. float()</button>
+<button class="quiz-option" data-answer="c">C. int()</button>
+<button class="quiz-option" data-answer="d">D. list()</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="a" data-explanation="% 是取餘數，9 除以 4 餘 1。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 13</span>
+<span>單選題</span>
+</div>
+
+<h3>13. 9 % 4 的結果是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 1</button>
+<button class="quiz-option" data-answer="b">B. 2</button>
+<button class="quiz-option" data-answer="c">C. 2.25</button>
+<button class="quiz-option" data-answer="d">D. 0</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="c" data-explanation="集合中的元素不重複。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 14</span>
+<span>單選題</span>
+</div>
+
+<h3>14. 集合 set 的特性是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 一定保留重複元素</button>
+<button class="quiz-option" data-answer="b">B. 元素必須是字串</button>
+<button class="quiz-option" data-answer="c">C. 會去除重複元素</button>
+<button class="quiz-option" data-answer="d">D. 只能有一個元素</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="a" data-explanation="可以捕捉預期的錯誤並提供適當處理。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 15</span>
+<span>單選題</span>
+</div>
+
+<h3>15. try/except 主要用來做什麼？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 處理可能發生的例外</button>
+<button class="quiz-option" data-answer="b">B. 排序串列</button>
+<button class="quiz-option" data-answer="c">C. 定義類別</button>
+<button class="quiz-option" data-answer="d">D. 停止電腦</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="Python 字串索引從 0 開始。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 16</span>
+<span>單選題</span>
+</div>
+
+<h3>16. 字串 "cat" 的第一個字元索引是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 1</button>
+<button class="quiz-option" data-answer="b">B. 0</button>
+<button class="quiz-option" data-answer="c">C. -2</button>
+<button class="quiz-option" data-answer="d">D. 3</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="a" data-explanation="list.sort() 會原地排序。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 17</span>
+<span>單選題</span>
+</div>
+
+<h3>17. 列表排序由小到大可用？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. sort()</button>
+<button class="quiz-option" data-answer="b">B. reverse_only()</button>
+<button class="quiz-option" data-answer="c">C. order()</button>
+<button class="quiz-option" data-answer="d">D. small()</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="偶數除以 2 的餘數為 0。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 18</span>
+<span>單選題</span>
+</div>
+
+<h3>18. 哪個條件代表 n 是偶數？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. n / 2 == 0</button>
+<button class="quiz-option" data-answer="b">B. n % 2 == 0</button>
+<button class="quiz-option" data-answer="c">C. n == 2</button>
+<button class="quiz-option" data-answer="d">D. n // 2 == 0</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="b" data-explanation="break 會直接結束所在的迴圈。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 19</span>
+<span>單選題</span>
+</div>
+
+<h3>19. break 在迴圈中的作用是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 跳過本次輸出</button>
+<button class="quiz-option" data-answer="b">B. 離開目前迴圈</button>
+<button class="quiz-option" data-answer="c">C. 重新啟動程式</button>
+<button class="quiz-option" data-answer="d">D. 宣告變數</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+<article class="practice-question" data-answer="a" data-explanation="參數讓同一個函式能處理不同資料。">
+<div class="quiz-meta">
+<span class="tag purple-tag">QUESTION 20</span>
+<span>單選題</span>
+</div>
+
+<h3>20. 函式參數的用途是？</h3>
+
+<div class="quiz-options">
+<button class="quiz-option" data-answer="a">A. 傳入需要處理的資料</button>
+<button class="quiz-option" data-answer="b">B. 自動關閉程式</button>
+<button class="quiz-option" data-answer="c">C. 只能輸出文字</button>
+<button class="quiz-option" data-answer="d">D. 取代所有變數</button>
+</div>
+
+<div class="answer-explanation" aria-live="polite">
+</div>
+
+<button class="quiz-reset" type="button">↻ 重新作答</button>
+</article>
+
+</div>
+
+<section class="section-block coding-challenges" id="coding-challenges">
+<div class="section-heading">
+<div>
+<div class="eyebrow">ZEROJUDGE STYLE · APCS PREP</div>
+
+<h2>實作題挑戰</h2>
+
+</div>
+
+<p>讀懂題目、分析輸入輸出、寫程式、測試邊界案例。</p>
+
+</div>
+
+<div class="challenge-banner">
+<span class="challenge-banner-icon">🐍</span>
+<div>
+<strong>從基礎題走向 APCS</strong>
+<p>這些題目採用類似線上評測的題目格式，附輸入／輸出說明與範例。請在編輯器自行執行測試；目前網站不會自動提交程式或判定所有測資。</p>
+
+</div>
+
+</div>
+
+<div class="coding-task-list">
+<article class="coding-task" data-task="python-p01">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P01</span>
+<span class="task-difficulty">入門</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>計算總和</h3>
+
+<p class="task-description">讀入一個整數 N，接著讀入 N 個整數，輸出這些數字的總和。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>第一行為 N；第二行有 N 個整數。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出一個整數，代表總和。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>5
+1 2 3 4 5</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>15</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習 input、split、整數轉換與累加。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>使用 split() 讀取第二行，再逐一轉成整數並累加。N 表示有幾個數字。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>使用 split() 讀取第二行，再逐一轉成整數並累加。N 表示有幾個數字。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 nums = list(map(int, input().split()))
 
 total = 0
 for x in nums:
     total += x
 
-print(total)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(total)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p02">
-  <div class="coding-task-head"><div><span class="task-id">P02</span><span class="task-difficulty">入門</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>奇偶統計</h3><p class="task-description">讀入 N 個整數，分別計算偶數與奇數的數量。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>第一行為 N；第二行有 N 個整數。</p></section><section><h4>輸出說明</h4><p>輸出「偶數個數 奇數個數」。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>6
-1 2 3 4 5 6</pre></section><section><h4>範例輸出</h4><pre>3 3</pre></section></div>
-  <p class="task-hint">能力重點：練習迴圈、條件判斷與計數器。</p>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p02">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P02</span>
+<span class="task-difficulty">入門</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>奇偶統計</h3>
+
+<p class="task-description">讀入 N 個整數，分別計算偶數與奇數的數量。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>第一行為 N；第二行有 N 個整數。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出「偶數個數 奇數個數」。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>6
+1 2 3 4 5 6</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>3 3</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習迴圈、條件判斷與計數器。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>每個數字除以 2 的餘數為 0 就是偶數，否則是奇數。分別用兩個計數器記錄。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>每個數字除以 2 的餘數為 0 就是偶數，否則是奇數。分別用兩個計數器記錄。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 nums = list(map(int, input().split()))
 
 even = 0
@@ -52,22 +675,81 @@ for x in nums:
     else:
         odd += 1
 
-print(even, odd)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(even, odd)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p03">
-  <div class="coding-task-head"><div><span class="task-id">P03</span><span class="task-difficulty">入門～初階</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>找最大值</h3><p class="task-description">讀入 N 個整數，輸出其中最大的數字。不得直接使用 max()。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>第一行為 N；第二行有 N 個整數。</p></section><section><h4>輸出說明</h4><p>輸出最大值。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>5
--3 8 2 7 1</pre></section><section><h4>範例輸出</h4><pre>8</pre></section></div>
-  <p class="task-hint">能力重點：練習走訪資料、比較與更新答案。</p>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p03">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P03</span>
+<span class="task-difficulty">入門～初階</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>找最大值</h3>
+
+<p class="task-description">讀入 N 個整數，輸出其中最大的數字。不得直接使用 max()。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>第一行為 N；第二行有 N 個整數。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出最大值。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>5
+-3 8 2 7 1</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>8</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習走訪資料、比較與更新答案。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>先把第一個數字當成目前最大值，再逐一比較其他數字；遇到更大的就更新。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>先把第一個數字當成目前最大值，再逐一比較其他數字；遇到更大的就更新。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 nums = list(map(int, input().split()))
 
 maximum = nums[0]
@@ -75,21 +757,80 @@ for x in nums:
     if x &gt; maximum:
         maximum = x
 
-print(maximum)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(maximum)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p04">
-  <div class="coding-task-head"><div><span class="task-id">P04</span><span class="task-difficulty">初階</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>成績等第</h3><p class="task-description">讀入一個 0 到 100 的整數分數。90 分以上為 A，80–89 為 B，70–79 為 C，60–69 為 D，其餘為 F。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>一個整數 score。</p></section><section><h4>輸出說明</h4><p>輸出對應等第 A、B、C、D 或 F。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>86</pre></section><section><h4>範例輸出</h4><pre>B</pre></section></div>
-  <p class="task-hint">能力重點：練習多層 if / elif / else 與邊界條件。</p>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p04">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P04</span>
+<span class="task-difficulty">初階</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>成績等第</h3>
+
+<p class="task-description">讀入一個 0 到 100 的整數分數。90 分以上為 A，80–89 為 B，70–79 為 C，60–69 為 D，其餘為 F。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>一個整數 score。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出對應等第 A、B、C、D 或 F。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>86</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>B</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習多層 if / elif / else 與邊界條件。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>由高分門檻開始判斷，因為第一個成立的條件就是該分數所屬的等第。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>score = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>由高分門檻開始判斷，因為第一個成立的條件就是該分數所屬的等第。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>score = int(input())
 
 if score &gt;= 90:
     print("A")
@@ -100,45 +841,163 @@ elif score &gt;= 70:
 elif score &gt;= 60:
     print("D")
 else:
-    print("F")</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+    print("F")</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p05">
-  <div class="coding-task-head"><div><span class="task-id">P05</span><span class="task-difficulty">初階</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>數字各位數總和</h3><p class="task-description">讀入一個非負整數 N，輸出它每一位數字相加的結果。請使用迴圈完成。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>一個非負整數 N。</p></section><section><h4>輸出說明</h4><p>輸出各位數字總和。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>5082</pre></section><section><h4>範例輸出</h4><pre>15</pre></section></div>
-  <p class="task-hint">能力重點：練習 while、整數除法 // 與取餘數 %。</p>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p05">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P05</span>
+<span class="task-difficulty">初階</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>數字各位數總和</h3>
+
+<p class="task-description">讀入一個非負整數 N，輸出它每一位數字相加的結果。請使用迴圈完成。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>一個非負整數 N。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出各位數字總和。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>5082</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>15</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習 while、整數除法 // 與取餘數 %。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>每次用 % 10 取出最後一位，再用 // 10 去掉最後一位。輸入 0 時答案也是 0。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>每次用 % 10 取出最後一位，再用 // 10 去掉最後一位。輸入 0 時答案也是 0。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 total = 0
 
 while n &gt; 0:
     total += n % 10
     n //= 10
 
-print(total)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(total)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p06">
-  <div class="coding-task-head"><div><span class="task-id">P06</span><span class="task-difficulty">初階</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>連續累加直到 0</h3><p class="task-description">持續讀入整數，遇到 0 時停止；輸出之前所有非 0 整數的總和。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>每行一個整數，最後以 0 結束。</p></section><section><h4>輸出說明</h4><p>輸出總和，不包含結束用的 0。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>3
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p06">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P06</span>
+<span class="task-difficulty">初階</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>連續累加直到 0</h3>
+
+<p class="task-description">持續讀入整數，遇到 0 時停止；輸出之前所有非 0 整數的總和。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>每行一個整數，最後以 0 結束。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出總和，不包含結束用的 0。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>3
 -2
 7
-0</pre></section><section><h4>範例輸出</h4><pre>8</pre></section></div>
-  <p class="task-hint">能力重點：練習 while、停止條件與累加。</p>
+0</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>8</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習 while、停止條件與累加。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>每次讀一個數字，若是 0 就停止；否則加進總和。這題使用 EOF 前遇到 0 結束的輸入格式。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>total = 0
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>每次讀一個數字，若是 0 就停止；否則加進總和。這題使用 EOF 前遇到 0 結束的輸入格式。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>total = 0
 
 while True:
     x = int(input())
@@ -146,23 +1005,82 @@ while True:
         break
     total += x
 
-print(total)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(total)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p07">
-  <div class="coding-task-head"><div><span class="task-id">P07</span><span class="task-difficulty">初階</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>統計出現次數</h3><p class="task-description">讀入 N 個整數和目標值 X，輸出 X 在這 N 個整數中出現幾次。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>第一行 N；第二行 N 個整數；第三行 X。</p></section><section><h4>輸出說明</h4><p>輸出出現次數。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>7
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p07">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P07</span>
+<span class="task-difficulty">初階</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>統計出現次數</h3>
+
+<p class="task-description">讀入 N 個整數和目標值 X，輸出 X 在這 N 個整數中出現幾次。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>第一行 N；第二行 N 個整數；第三行 X。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>輸出出現次數。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>7
 2 1 2 3 2 4 5
-2</pre></section><section><h4>範例輸出</h4><pre>3</pre></section></div>
-  <p class="task-hint">能力重點：練習串列走訪與計數。</p>
+2</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>3</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：練習串列走訪與計數。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>逐一檢查每個數字，與目標 X 相同時就把計數器加一。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>逐一檢查每個數字，與目標 X 相同時就把計數器加一。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 nums = list(map(int, input().split()))
 x = int(input())
 
@@ -171,22 +1089,81 @@ for value in nums:
     if value == x:
         count += 1
 
-print(count)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(count)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article><article class="coding-task" data-task="python-p08">
-  <div class="coding-task-head"><div><span class="task-id">P08</span><span class="task-difficulty">進階入門</span></div><button class="task-done" type="button" aria-pressed="false">○ 標記完成</button></div>
-  <h3>排序前的準備</h3><p class="task-description">讀入 N 個整數，將它們由小到大輸出。請先嘗試自行實作選擇排序或泡沫排序。</p>
-  <div class="task-spec-grid"><section><h4>輸入說明</h4><p>第一行 N；第二行 N 個整數。</p></section><section><h4>輸出說明</h4><p>由小到大輸出，數字以空白分隔。</p></section></div>
-  <div class="sample-grid"><section><h4>範例輸入</h4><pre>5
-4 1 5 2 3</pre></section><section><h4>範例輸出</h4><pre>1 2 3 4 5</pre></section></div>
-  <p class="task-hint">能力重點：APCS 基礎常見能力：多重迴圈、比較與交換。</p>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+<article class="coding-task" data-task="python-p08">
+<div class="coding-task-head">
+<div>
+<span class="task-id">P08</span>
+<span class="task-difficulty">進階入門</span>
+</div>
+
+<button class="task-done" type="button" aria-pressed="false">○ 標記完成</button>
+</div>
+
+<h3>排序前的準備</h3>
+
+<p class="task-description">讀入 N 個整數，將它們由小到大輸出。請先嘗試自行實作選擇排序或泡沫排序。</p>
+
+<div class="task-spec-grid">
+<section>
+<h4>輸入說明</h4>
+
+<p>第一行 N；第二行 N 個整數。</p>
+
+</section>
+
+<section>
+<h4>輸出說明</h4>
+
+<p>由小到大輸出，數字以空白分隔。</p>
+
+</section>
+
+</div>
+
+<div class="sample-grid">
+<section>
+<h4>範例輸入</h4>
+
+<pre>5
+4 1 5 2 3</pre>
+
+</section>
+
+<section>
+<h4>範例輸出</h4>
+
+<pre>1 2 3 4 5</pre>
+
+</section>
+
+</div>
+
+<p class="task-hint">能力重點：APCS 基礎常見能力：多重迴圈、比較與交換。</p>
+
 <div class="solution-panel" hidden>
-  <div class="solution-explanation"><strong>解題思路</strong><p>這裡示範泡沫排序。相鄰兩個數字若順序錯誤就交換；每一輪會把較大的數字往右推。</p></div>
-  <div class="solution-code-head"><strong>參考答案（Python）</strong><button class="button secondary copy-solution" type="button">複製程式碼</button></div>
-  <pre class="solution-code"><code>n = int(input())
+<div class="solution-explanation">
+<strong>解題思路</strong>
+<p>這裡示範泡沫排序。相鄰兩個數字若順序錯誤就交換；每一輪會把較大的數字往右推。</p>
+
+</div>
+
+<div class="solution-code-head">
+<strong>參考答案（Python）</strong>
+<button class="button secondary copy-solution" type="button">複製程式碼</button>
+</div>
+
+<pre class="solution-code">
+<code>n = int(input())
 nums = list(map(int, input().split()))
 
 for i in range(n):
@@ -194,11 +1171,36 @@ for i in range(n):
         if nums[j] &gt; nums[j + 1]:
             nums[j], nums[j + 1] = nums[j + 1], nums[j]
 
-print(*nums)</code></pre>
-  <a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+print(*nums)</code>
+</pre>
+
+<a class="button primary solution-online" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
 </div>
+
 <button class="button secondary solution-toggle" type="button" aria-expanded="false">顯示答案與解析</button>
-  <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
-</article></div>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">到 Online Python 編寫與測試 ↗</a>
+</article>
+
+</div>
+
 </section>
-<div style="margin:22px 0"><a class="button secondary" href="index.html">← 返回課程單元</a> <a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a></div><footer class="footer"><a class="brand small-brand" href="../index.html"><span class="brand-mark">⌘</span><span>CodeBase</span></a><span>先作答，再讀解析；錯題也能反覆練習。</span><span>20 Multiple Choice + 8 Coding Tasks</span></footer></main></body></html>
+
+<div style="margin:22px 0">
+<a class="button secondary" href="index.html">← 返回課程單元</a>
+<a class="button primary" href="https://www.programiz.com/python-programming/online-compiler" target="_blank" rel="noopener">開啟 Online Python ↗</a>
+</div>
+
+<footer class="footer">
+<a class="brand small-brand" href="../index.html">
+<span class="brand-mark">⌘</span>
+<span>CodeBase</span>
+</a>
+<span>先作答，再讀解析；錯題也能反覆練習。</span>
+<span>20 Multiple Choice + 8 Coding Tasks</span>
+</footer>
+
+</main>
+
+</body>
+
+</html>
