@@ -26,8 +26,20 @@
   const applyTheme = theme => { document.body.classList.toggle("light-mode", theme === "light"); if (themeButton) themeButton.textContent = theme === "light" ? "☀ 淺色" : "☾ 深色"; localStorage.setItem("codebase-theme", theme); };
   applyTheme(localStorage.getItem("codebase-theme") || "dark");
   if (themeButton) themeButton.addEventListener("click", () => applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light"));
+  // Keep the lesson table of contents synchronized with the actual unit URL.
+  const unitMatch = location.pathname.match(/unit(\d{2})\.html$/i);
+  if (unitMatch) {
+    const currentUnit = unitMatch[1];
+    $$(".lesson-toc a[data-current-unit]").forEach(link => {
+      const active = link.dataset.currentUnit === currentUnit;
+      link.classList.toggle("is-current", active);
+      if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current");
+    });
+    const indicator = $(".toc-current"); if (indicator) indicator.textContent = `UNIT ${currentUnit} / 27`;
+  }
   const menuToggle = $("#menuToggle"), sidebar = $("#sidebar");
   const setMenu = open => { if (!sidebar) return; sidebar.classList.toggle("closed", !open); sidebar.classList.toggle("open", open); document.body.classList.toggle("sidebar-closed", !open); if (menuToggle) menuToggle.setAttribute("aria-expanded", String(open)); };
+  if (sidebar) $$(".side-link", sidebar).forEach(link => link.addEventListener("click", () => { if (window.matchMedia("(max-width: 800px)").matches) { sidebar.classList.remove("open"); if (menuToggle) menuToggle.setAttribute("aria-expanded", "false"); } }));
   if (menuToggle && sidebar) {
     const saved = localStorage.getItem("codebase-sidebar"); setMenu(saved !== "closed");
     menuToggle.addEventListener("click", () => { const open = sidebar.classList.contains("closed") || !sidebar.classList.contains("open"); setMenu(open); localStorage.setItem("codebase-sidebar", open ? "open" : "closed"); });
