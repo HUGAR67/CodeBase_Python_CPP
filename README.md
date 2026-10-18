@@ -1,6 +1,69 @@
 # CodeBase｜Python × C++ 學習站
 
-一個以 APCS 與程式解題能力為方向的繁體中文學習網站，預設深色模式。
+一個以 APCS 與程式解題能力為方向的繁體中文學習網站，預設深色模式，支援 GitHub Pages 靜態部署。
+
+## 目前版本：v3.3
+
+### 主要功能
+- Python 與 C++ 各有 27 個教學單元，從基礎語法延伸到資料結構、演算法與 APCS 綜合練習。
+- 教學單元包含學習目標、觀念說明、程式範例、預期輸出、常見錯誤、練習任務與線上編輯器入口。
+- 內建課程索引、練習頁、單元導覽、學習進度紀錄與深色／淺色主題切換。
+- 進度與主題偏好儲存在瀏覽器 `localStorage`；不需要登入。
+- 提供外部線上編輯器連結，方便執行 Python 或編譯 C++。
+
+## 版本更新紀錄
+
+以下整理此專案從初版到 v3.3 的主要方向與功能變化。早期的 v2.x 是多次逐步修訂，這裡以各版的主要改進方向摘要呈現。
+
+### 初版｜CodeBase Python + C++ 基礎網站
+- 建立 Python 與 C++ 的雙語言學習網站架構。
+- 提供首頁、課程入口、基礎教學單元與練習頁。
+- 加入線上編輯器連結及 GitHub Pages 靜態網站部署方式。
+
+### v2.0
+- 擴充課程頁面與練習內容，改善網站導覽與整體結構。
+- 整理共用樣式、JavaScript 與各語言課程檔案，讓網站較容易維護。
+
+### v2.1
+- 延續 v2 架構，調整教學頁與課程內容的呈現。
+- 修整共用檔案與頁面結構。
+
+### v2.2
+- 持續補充與整理練習內容。
+- 改善課程頁面及網站互動的一致性。
+
+### v2.3
+- 進一步調整課程版面與練習頁的呈現方式。
+- 持續修整導覽與共用資源。
+
+### v2.4
+- 持續改善教學內容與網站使用流程。
+- 修整頁面與共用程式，為後續擴充做準備。
+
+### v2.5
+- 整理專案檔案結構與部署說明。
+- 以共用 CSS、JavaScript 管理主題、導覽、練習與學習進度。
+- 明確整理 GitHub Pages 部署步驟及線上編輯器入口。
+
+### v3.0
+- 課程大幅擴充為 **Python 27 單元 + C++ 27 單元**。
+- 加入從基礎到進階的課程路線，涵蓋遞迴、資料結構、前綴和、雙指標、二分搜尋、貪心、動態規劃、圖論等主題。
+- 教學單元加入更完整的範例、輸出、常見錯誤與挑戰練習。
+- 改善首頁、練習中心、進度紀錄及深色模式的整體體驗。
+
+### v3.1
+- 修復共用 CSS 檔案內容錯誤，避免首頁樣式未載入而顯示成純文字排版。
+- 重新打包完整網站，方便直接在本機測試或部署至 GitHub Pages。
+
+### v3.2
+- 調整首頁導覽按鈕的間距與呈現，減少頁首元素擁擠的情況。
+- 改善教學頁的標題層級、學習目標、程式碼區塊及練習卡片版面。
+- 保留預設深色模式與主題切換功能。
+
+### v3.3
+- 改善手機、平板與桌面版的響應式排版，讓窄螢幕更容易閱讀教學內容。
+- 修正 Unit 頁面右側「本課程單元」目錄與目前單元標示，避免所有頁面都顯示 Unit 5。
+- 為相關入門單元加入 ZeroJudge 延伸實作連結，例如基本輸出、簡易加法、條件判斷與最大公因數。
 
 ## 課程規劃（每種語言 27 單元）
 - **UNIT 01–10｜基礎**：語法、輸入輸出、條件、迴圈、字串、陣列／串列、函式。
@@ -8,13 +71,26 @@
 - **UNIT 16–20｜中高階**：遞迴、STL／資料結構、堆疊佇列、前綴和、雙指標與二分搜尋。
 - **UNIT 21–27｜高階挑戰**：貪心、動態規劃、圖論、數論、位元運算與 APCS 整合。
 
-每單元包含學習目標、觀念說明、程式範例、預期輸出、常見錯誤、練習任務與線上編輯器入口。
-
 ## 線上編輯器
-- Python：<https://www.programiz.com/python-programming/online-compiler>
-- C++：<https://www.onlinegdb.com/online_c++_compiler>
+- Python：[Programiz Online Python Compiler](https://www.programiz.com/python-programming/online-compiler)
+- C++：[OnlineGDB C++ Compiler](https://www.onlinegdb.com/online_c++_compiler)
+
+## ZeroJudge 延伸練習
+- [a001｜哈囉](https://zerojudge.tw/ShowProblem?problemid=a001)
+- [a002｜簡易加法](https://zerojudge.tw/ShowProblem?problemid=a002)
+- [a003｜兩光法師占卜術](https://zerojudge.tw/ShowProblem?problemid=a003)
+- [a024｜最大公因數（GCD）](https://zerojudge.tw/ShowProblem?problemid=a024)
+
+題目連結由 ZeroJudge 提供；請依各單元的推薦說明選擇適合的題目練習。
 
 ## GitHub Pages 部署
-將所有檔案放在 repository 根目錄，於 **Settings → Pages → Deploy from a branch → main → /(root)** 啟用。
+1. 將本專案所有檔案與資料夾放在 GitHub repository 根目錄，不要再包進另一層資料夾。
+2. 開啟 repository 的 **Settings → Pages**。
+3. 在 Build and deployment 選擇 **Deploy from a branch**。
+4. 選擇 `main` 分支與 `/(root)`，然後儲存。
+5. 等待部署完成後，使用 GitHub Pages 網址開啟網站。
 
-學習紀錄與主題偏好保存在瀏覽器 `localStorage`。本網站是靜態頁面，程式實際執行由外部線上編輯器提供。
+## 專案注意事項
+- 根目錄的 `index.html` 是網站首頁；`README.md` 是 GitHub 儲存庫的說明文件，請不要互相改名取代。
+- 本網站是靜態網站，不會直接在頁面內執行 Python 或編譯 C++；程式執行由外部線上編輯器提供。
+- 學習進度與主題偏好儲存在目前瀏覽器的 `localStorage`，清除瀏覽器資料可能會使紀錄消失。
