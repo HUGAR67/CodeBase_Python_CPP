@@ -321,3 +321,55 @@ body{
   .brand-stack .menu-toggle:before{content:"☰";font-size:14px}
   .theme-toggle{min-width:35px;margin-top:3px;padding:7px 9px}
 }
+
+/* v3.6: 導覽按鈕移到頂部橫幅下方，與品牌列分離 */
+:root{--topbar:72px;--navrow:54px}
+.topbar{height:var(--topbar);min-height:var(--topbar);align-items:center;padding:0 22px;gap:12px;overflow:visible}
+.brand-stack{flex-direction:row;align-items:center;gap:0;min-width:0;height:100%}
+.brand-stack .brand{min-width:0;flex:none}
+.brand-stack .menu-toggle{position:fixed;top:calc(var(--topbar) + 8px);left:16px;z-index:32;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:7px 13px;min-height:36px;font-size:12px;line-height:1.2;border-radius:10px}
+.brand-stack .menu-toggle:before{content:"☰";font-size:14px;line-height:1}
+.topbar-spacer{flex:1}
+.sidebar{top:calc(var(--topbar) + var(--navrow));}
+.main-content{padding-top:calc(var(--topbar) + var(--navrow) + 20px)}
+.lesson-aside{top:calc(var(--topbar) + var(--navrow) + 16px);max-height:calc(100vh - var(--topbar) - var(--navrow) - 30px)}
+@media(max-width:800px){
+  :root{--topbar:64px;--navrow:50px}
+  .topbar{height:var(--topbar);min-height:var(--topbar);padding:0 10px;gap:6px;align-items:center}
+  .brand-stack{flex-direction:row;align-items:center;gap:0}
+  .brand-stack .menu-toggle{top:calc(var(--topbar) + 7px);left:12px;min-height:34px;padding:7px 11px;font-size:11px}
+  .brand-stack .menu-toggle:before{font-size:13px}
+  .sidebar{top:calc(var(--topbar) + var(--navrow));}
+  .main-content,.sidebar-closed .main-content{padding-top:calc(var(--topbar) + var(--navrow) + 16px)}
+  .lesson-aside{top:auto;max-height:none}
+}
+@media(max-width:480px){
+  :root{--topbar:60px;--navrow:46px}
+  .topbar{padding:0 9px}
+  .brand-stack .menu-toggle{top:calc(var(--topbar) + 6px);left:10px;min-width:0;min-height:32px;padding:6px 10px;font-size:0}
+  .brand-stack .menu-toggle:before{content:"☰";font-size:16px}
+  .brand-stack .menu-toggle:after{content:none!important}
+  .sidebar{top:calc(var(--topbar) + var(--navrow))}
+  .main-content,.sidebar-closed .main-content{padding-top:calc(var(--topbar) + var(--navrow) + 14px)}
+}
+
+
+/* v3.8：首頁程式碼示範約 5 秒逐行出現，主題切換柔和過渡 */
+.hero-visual .code-body > div { opacity: 0; animation: hero-code-line-in .55s ease-out forwards; }
+.hero-visual .code-body > div:nth-child(1) { animation-delay: .25s; }
+.hero-visual .code-body > div:nth-child(2) { animation-delay: 1.15s; }
+.hero-visual .code-body > div:nth-child(3) { animation-delay: 2.05s; }
+.hero-visual .code-body > div:nth-child(4) { animation-delay: 2.85s; }
+.hero-visual .code-output { animation: hero-output-in .65s ease-out 3.65s both; }
+@keyframes hero-code-line-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-output-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+body, .topbar, .sidebar, .theme-toggle, .menu-toggle, .stat-card, .course-card, .practice-section, .quiz-card, .unit-card, .lesson-main, .lesson-aside, .what-can-code, .showcase-float, .side-link { transition: background-color .5s ease, background .5s ease, color .5s ease, border-color .5s ease, box-shadow .5s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual .code-body > div, .hero-visual .code-output { animation: none !important; opacity: 1 !important; transform: none !important; }
+  body, .topbar, .sidebar, .theme-toggle, .menu-toggle, .stat-card, .course-card, .practice-section, .quiz-card, .unit-card, .lesson-main, .lesson-aside, .what-can-code, .showcase-float, .side-link { transition: none !important; }
+}
+
+/* v3.9: new web literacy, cybersecurity and password-learning pages */
+.learning-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 30px}.learning-hub-card{position:relative;display:flex;flex-direction:column;gap:9px;min-height:190px;padding:20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#171d34,#101725);transition:transform .2s,border-color .2s,background .35s}.learning-hub-card:hover{transform:translateY(-3px);border-color:#8278d8}.learning-hub-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#282448;font-size:22px}.learning-hub-card h3{margin:3px 0 0;font-size:17px}.learning-hub-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}.learning-hub-card .text-link{margin-top:auto;padding-top:5px}.learning-content h2{margin-top:30px}.learning-content h3{margin-top:22px}.learning-content p,.learning-content li{line-height:1.9}.learning-content .callout{margin:16px 0}.learning-content .code-block{overflow:auto}.concept-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.concept-card{padding:15px;border:1px solid var(--line);border-radius:13px;background:var(--panel)}.concept-card h3{margin:0 0 6px;font-size:14px}.concept-card p{margin:0;color:var(--muted);font-size:12px}.safe-practice{border-left:3px solid var(--green);padding:13px 16px;background:#13302755;border-radius:0 10px 10px 0}.danger-practice{border-left:3px solid var(--orange);padding:13px 16px;background:#39271855;border-radius:0 10px 10px 0}.daily-completed{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;margin:8px 0;border:1px solid #24865d;border-radius:8px;background:#103a2a;color:#8cf0bd;font-size:12px;font-weight:800}.quiz-option:disabled{cursor:not-allowed;opacity:.88}.light-mode .learning-hub-card{background:linear-gradient(145deg,#fff,#f3f5ff);border-color:#dce1ef}.light-mode .concept-card{background:#fff;border-color:#dce1ef}.light-mode .learning-hub-icon{background:#eeebff}.light-mode .safe-practice{background:#e8f8ef}.light-mode .danger-practice{background:#fff3e4}
+@media(max-width:1000px){.learning-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.concept-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.learning-hub-grid,.concept-grid{grid-template-columns:1fr}.learning-hub-card{min-height:0}}

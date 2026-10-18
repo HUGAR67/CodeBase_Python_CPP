@@ -60,23 +60,43 @@
   ];
   const dailyQuiz = $("#lobbyQuiz");
   if (dailyQuiz) {
-    const today = new Date(); const day = Math.floor(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) / 86400000), item = dailyQuestions[day % dailyQuestions.length];
-    const heading = $("#dailyQuestion"), tag = $(".quiz-meta .tag", dailyQuiz), options = $(".quiz-options", dailyQuiz), feedback = $("#lobbyFeedback"), dateLabel = $("#dailyDate");
+    const now = new Date();
+    const localDateKey = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+    const day = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+    const item = dailyQuestions[day % dailyQuestions.length];
+    const storageKey = `codebase-daily-answered-${localDateKey}`;
+    const heading = $("#dailyQuestion"), tag = $(".quiz-meta .tag", dailyQuiz), options = $(".quiz-options", dailyQuiz), feedback = $("#lobbyFeedback"), dateLabel = $("#dailyDate"), status = $("#dailyStatus");
     if (heading) heading.textContent = item.q;
     if (tag) tag.textContent = item.lang;
-    if (dateLabel) dateLabel.textContent = new Date().toLocaleDateString("zh-TW", {month:"numeric",day:"numeric"});
+    if (dateLabel) dateLabel.textContent = now.toLocaleDateString("zh-TW", {month:"numeric",day:"numeric"});
     if (options) options.innerHTML = item.opts.map((opt,i) => `<button class="quiz-option" data-answer="${String.fromCharCode(97+i)}">${String.fromCharCode(65+i)}. ${opt}</button>`).join("");
     dailyQuiz.dataset.answer = item.answer; dailyQuiz.dataset.explanation = item.why;
-    const bindDaily = () => $$(".quiz-option", dailyQuiz).forEach(option => {
-      option.setAttribute("aria-pressed", "false");
-      option.addEventListener("click", () => {
-        $$(".quiz-option", dailyQuiz).forEach(btn => { btn.classList.remove("correct","incorrect","chosen"); btn.setAttribute("aria-pressed", "false"); });
-        const correct = option.dataset.answer === item.answer; option.classList.add(correct ? "correct" : "incorrect", "chosen"); option.setAttribute("aria-pressed", "true");
-        if (feedback) feedback.textContent = (correct ? "答對了！" : "這個答案不正確，可以直接改選其他選項。") + item.why;
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem(storageKey) || "null"); } catch { saved = null; }
+    const markCompleted = record => {
+      $$(".quiz-option", dailyQuiz).forEach(btn => {
+        btn.disabled = true;
+        btn.classList.remove("correct", "incorrect", "chosen");
+        btn.setAttribute("aria-pressed", "false");
+        if (btn.dataset.answer === item.answer) btn.classList.add("correct");
+        if (btn.dataset.answer === record.choice) { btn.classList.add("chosen"); if (record.choice !== item.answer) btn.classList.add("incorrect"); btn.setAttribute("aria-pressed", "true"); }
       });
-    });
-    bindDaily();
-    const reset = $("#resetDailyQuiz"); if (reset) reset.addEventListener("click", () => { $$(".quiz-option",dailyQuiz).forEach(btn => { btn.classList.remove("correct","incorrect","chosen"); btn.setAttribute("aria-pressed", "false"); }); if (feedback) feedback.textContent = "答案已清除，再選一次吧！"; });
+      if (feedback) feedback.textContent = (record.correct ? "答對了！" : "已完成今日作答。") + item.why;
+      if (status) status.innerHTML = '<span class="daily-completed">✓ 今日題目已作答</span>';
+    };
+    if (saved && saved.date === localDateKey) {
+      markCompleted(saved);
+    } else {
+      if (status) status.textContent = "選擇一個答案就會記錄今日作答。";
+      $$(".quiz-option", dailyQuiz).forEach(option => {
+        option.setAttribute("aria-pressed", "false");
+        option.addEventListener("click", () => {
+          const record = {date:localDateKey,choice:option.dataset.answer,correct:option.dataset.answer === item.answer};
+          try { localStorage.setItem(storageKey, JSON.stringify(record)); } catch {}
+          markCompleted(record);
+        });
+      });
+    }
   }
   // 單一按鈕完成本單元並前往下一個單元；完成時顯示綠色光效與粒子。
   $$(".lesson-next-complete").forEach(button => button.addEventListener("click", () => {
