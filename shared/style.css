@@ -276,3 +276,48 @@ body{
 .zerojudge-section{margin:26px 0;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--panel2)}.zerojudge-heading h2{margin:10px 0 6px}.zerojudge-heading p{margin-top:0}.zerojudge-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}.zerojudge-link{display:flex;flex-direction:column;gap:8px;padding:15px;border:1px solid var(--line);border-radius:12px;background:var(--panel);text-decoration:none!important;min-width:0}.zerojudge-link:hover{border-color:var(--purple);transform:translateY(-1px)}.zerojudge-link strong{color:var(--text);font-size:15px}.zerojudge-link>span:not(.zj-id):not(.zj-cta){color:var(--muted);font-size:12px}.zj-id{font:10px "DM Mono",monospace;color:var(--purple)}.zj-cta{margin-top:auto;color:var(--purple);font-size:12px;font-weight:700}
 @media(max-width:800px){.lesson-layout{grid-template-columns:minmax(0,1fr)}.lesson-main{min-width:0;width:100%;box-sizing:border-box}.lesson-aside{position:static;order:2;max-height:260px;margin-top:12px}.lesson-toc{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-toc a{font-size:11px}.lesson-main h1{font-size:clamp(22px,5vw,30px);overflow-wrap:anywhere}.code-block{max-width:100%;box-sizing:border-box}.lesson-actions{flex-wrap:wrap}.lesson-actions>*{max-width:100%;white-space:normal}.zerojudge-section{padding:15px}}
 @media(max-width:480px){.lesson-toc{grid-template-columns:1fr}.lesson-aside{max-height:220px;padding:13px}.lesson-main,.lesson-aside{border-radius:13px}.lesson-main p,.lesson-main li{font-size:14px;line-height:1.8}.code-block{font-size:12px;line-height:1.7;padding:12px;white-space:pre;overflow-x:auto}.zerojudge-cards{grid-template-columns:1fr}.lesson-actions{flex-direction:column}.lesson-actions .button{width:100%;box-sizing:border-box;text-align:center}.zerojudge-section{margin:18px 0}}
+
+
+/* v3.4: 修正導覽按鈕圖示重複顯示 */
+.menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.menu-toggle:before{content:"☰";font-size:15px;line-height:1}
+.menu-toggle:after{content:none!important}
+@media(max-width:480px){.brand-stack .menu-toggle{font-size:0;min-width:38px;padding:8px}.brand-stack .menu-toggle:before{content:"☰";font-size:16px}.brand-stack .menu-toggle:after{content:none!important}}
+
+
+/* v3.5: 將導覽按鈕移到品牌標誌下方的獨立列 */
+:root{--topbar:126px}
+.topbar{height:var(--topbar);align-items:flex-start;padding:12px 22px 10px;gap:0}
+.brand-stack{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0;line-height:1.15}
+.brand-stack .brand{min-width:0;flex:none}
+.brand-stack .menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:8px 13px;min-height:36px;font-size:12px;line-height:1.2}
+.brand-stack .menu-toggle:before{content:"☰";font-size:14px;line-height:1}
+.topbar-spacer{flex:1}
+.topbar-caption{display:none}
+.theme-toggle{margin:5px 0 0 12px}
+.sidebar{top:var(--topbar)}
+.main-content{padding-top:calc(var(--topbar) + 24px)}
+@media(max-width:800px){
+  :root{--topbar:120px}
+  .topbar{height:var(--topbar);padding:9px 12px 10px;gap:0;align-items:flex-start}
+  .brand-stack{flex-direction:column;align-items:flex-start;gap:8px;min-width:0;flex:0 1 auto}
+  .brand-stack .brand{font-size:14px;gap:8px}
+  .brand-stack .brand-mark{width:30px;height:30px;font-size:19px}
+  .brand-stack .brand small{font-size:6px;letter-spacing:1px}
+  .brand-stack .menu-toggle{font-size:11px;min-width:0;min-height:34px;padding:7px 12px}
+  .brand-stack .menu-toggle:before{content:"☰";font-size:14px}
+  .theme-toggle{margin:5px 0 0 auto;min-height:36px;padding:8px 10px;font-size:0;min-width:36px}
+  .theme-toggle:after{content:'☾';font-size:17px}
+  .main-content,.sidebar-closed .main-content{padding-top:calc(var(--topbar) + 18px)}
+}
+@media(max-width:480px){
+  :root{--topbar:116px}
+  .topbar{padding:8px 10px;gap:0}
+  .brand-stack{gap:7px}
+  .brand-stack .brand{font-size:12px;gap:7px}
+  .brand-stack .brand-mark{width:27px;height:27px;font-size:17px}
+  .brand-stack .brand small{font-size:5.5px;letter-spacing:.65px}
+  .brand-stack .menu-toggle{font-size:11px;min-width:0;min-height:33px;padding:7px 11px}
+  .brand-stack .menu-toggle:before{content:"☰";font-size:14px}
+  .theme-toggle{min-width:35px;margin-top:3px;padding:7px 9px}
+}
